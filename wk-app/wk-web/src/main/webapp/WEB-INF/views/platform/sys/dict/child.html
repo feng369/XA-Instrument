@@ -1,0 +1,53 @@
+<% for(o in obj){
+%>
+<tr data-tt-id="${o.id}" data-tt-parent-id="${o.parentId}" data-tt-branch="${o.hasChildren}">
+    <td>
+        <span class="pd-l-sm"></span>${o.name!}
+    </td>
+    <td>${o.code!}</td>
+    <td>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                <i class="ti-settings"></i>
+                <span class="ti-angle-down"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="${base}/platform/sys/dict/edit/${o.id}" data-pjax>修改</a></li>
+                <li><a href="javascript:;" onclick="del('${o.id}')">删除</a></li>
+                <li class="divider"></li>
+                <li><a href="${base}/platform/sys/dict/add?pid=${o.id}" data-pjax>添加子级</a></li>
+                <li class="divider"></li>
+                    <li><a class="uploadTools" data-pid="${o.id}" data-pjax>上传图片</a></li>
+                    <li><a href="${base}/platform/sys/dict/watchPic?id=${o.id}"  data-toggle="modal" data-target="#dialogDetail">查看图片</a>
+                </li>
+            </ul>
+        </div>
+    </td>
+</tr>
+<%
+}%>
+
+<script type="application/javascript">
+    $(".uploadTools").on("click",function(){
+        var pid = $(this).data("pid");
+        $("#toolId").val(pid);
+        $("#uploadForm input[name='uploads']").trigger("click");
+    });
+    function uploadImg(formId){
+        $("#" + formId).ajaxUpload({
+            url:"${base}/platform/sys/dict/uploadTools",
+            dataType:"json",
+            success:function(data, status, xhr){
+                if(data.code == 0){
+                        Toast.success(data.msg)
+                }else if(data.code == 1){
+                    Toast.error(data.msg)
+                }
+            },
+            error: function (a, b, c) {
+                Toast.error("服务器繁忙，请重试!");
+            }
+
+        });
+    }
+</script>

@@ -1,0 +1,263 @@
+-------------------------------------------------------------------------------
+Test set: cn.wizzer.test.SimpleTest
+-------------------------------------------------------------------------------
+Tests run: 37, Failures: 0, Errors: 37, Skipped: 0, Time elapsed: 10.288 sec <<< FAILURE! - in cn.wizzer.test.SimpleTest
+testOrderAndOrderEntry(cn.wizzer.test.SimpleTest)  Time elapsed: 0.005 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testOrder10(cn.wizzer.test.SimpleTest)  Time elapsed: 0.001 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testOrder11(cn.wizzer.test.SimpleTest)  Time elapsed: 0 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testOrder12(cn.wizzer.test.SimpleTest)  Time elapsed: 0.001 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testOrder13(cn.wizzer.test.SimpleTest)  Time elapsed: 0 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testOrder14(cn.wizzer.test.SimpleTest)  Time elapsed: 0.002 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testOrder15(cn.wizzer.test.SimpleTest)  Time elapsed: 0.001 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testOrder16(cn.wizzer.test.SimpleTest)  Time elapsed: 0.001 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testOrder17(cn.wizzer.test.SimpleTest)  Time elapsed: 0.001 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testOrder18(cn.wizzer.test.SimpleTest)  Time elapsed: 0 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testOrder19(cn.wizzer.test.SimpleTest)  Time elapsed: 0 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testOrder20(cn.wizzer.test.SimpleTest)  Time elapsed: 0.001 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testOrder21(cn.wizzer.test.SimpleTest)  Time elapsed: 0 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testOrder23(cn.wizzer.test.SimpleTest)  Time elapsed: 0 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testOrder25(cn.wizzer.test.SimpleTest)  Time elapsed: 0 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testOrder26(cn.wizzer.test.SimpleTest)  Time elapsed: 0 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testAddUser(cn.wizzer.test.SimpleTest)  Time elapsed: 0 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testABC(cn.wizzer.test.SimpleTest)  Time elapsed: 0.001 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testIns(cn.wizzer.test.SimpleTest)  Time elapsed: 0 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testSys(cn.wizzer.test.SimpleTest)  Time elapsed: 0 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testWxP(cn.wizzer.test.SimpleTest)  Time elapsed: 0 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testGoods(cn.wizzer.test.SimpleTest)  Time elapsed: 0 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testOrder(cn.wizzer.test.SimpleTest)  Time elapsed: 0 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testUser1(cn.wizzer.test.SimpleTest)  Time elapsed: 0 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+test_user(cn.wizzer.test.SimpleTest)  Time elapsed: 0.001 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testWx(cn.wizzer.test.SimpleTest)  Time elapsed: 0 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testAddPlace(cn.wizzer.test.SimpleTest)  Time elapsed: 0 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testDeletePerson(cn.wizzer.test.SimpleTest)  Time elapsed: 0.001 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testAddPerson(cn.wizzer.test.SimpleTest)  Time elapsed: 0 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testEntity(cn.wizzer.test.SimpleTest)  Time elapsed: 0.001 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testOrder2(cn.wizzer.test.SimpleTest)  Time elapsed: 0 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testOrder3(cn.wizzer.test.SimpleTest)  Time elapsed: 0 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testOrder4(cn.wizzer.test.SimpleTest)  Time elapsed: 0.001 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testOrder5(cn.wizzer.test.SimpleTest)  Time elapsed: 0.001 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testOrder6(cn.wizzer.test.SimpleTest)  Time elapsed: 0.001 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testOrder8(cn.wizzer.test.SimpleTest)  Time elapsed: 0 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+
+testOrder9(cn.wizzer.test.SimpleTest)  Time elapsed: 0 sec  <<< ERROR!
+org.nutz.ioc.IocException: IocBean[simpleTest] throw Exception when creating
+Caused by: java.lang.RuntimeException: IocBean[simpleTest] fail at field=[dao]
+Caused by: org.nutz.ioc.IocException: IocBean[dao -> dataSource] throw Exception when creating
+Caused by: java.lang.IllegalArgumentException: Failed to decrypt.
+Caused by: java.lang.IllegalArgumentException: String length must be a multiple of four.
+

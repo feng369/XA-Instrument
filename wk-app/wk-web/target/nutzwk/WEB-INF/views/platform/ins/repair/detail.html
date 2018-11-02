@@ -1,0 +1,92 @@
+<div class="modal-body no-p">
+    <div class="row">
+        <div class="col-xs-12">
+            <section class="panel  no-b">
+                <header class="panel-heading clearfix brtl brtr">
+                    <div class="overflow-hidden">
+                        <!--<a href="javascript:;" class="h4 show no-m pt5">维修申报表</a>-->
+                        <small>维修申报明细</small>
+                    </div>
+                </header>
+                <div class="list-group">
+                    <table class="table table-bordered table-striped mg-t datatable">
+                        <tbody>
+                        <tr>
+                            <td>${msg['ins.repair.column.orderId']}</td>
+                            <td>${obj.order.ordernum!}</td>
+                        </tr>
+                        <!--<tr>
+                            <td>${msg['ins.repair.column.orderentryId']}</td>
+                            <td>${obj.orderentryId}</td>
+                        </tr>-->
+                        <tr>
+                            <td>工具编号</td>
+                            <td>${instrument.insnum!}</td>
+                        </tr>
+                        <tr>
+                            <td>工具名称</td>
+                            <td>${baseins.insname!}</td>
+                        </tr>
+                    <!--    <tr>
+                            <td>${msg['ins.repair.column.imgName']}</td>
+                            <td>${obj.imgName}</td>
+                        </tr>-->
+                       <!--
+                        <tr>
+                            <td>${msg['ins.repair.column.repairType']}</td>
+                            <td>${obj.repairType}</td>
+                        </tr>
+                        -->
+                        <tr>
+                            <td>维修申请人</td>
+                            <td>${obj.basePerson.personname!}</td>
+                        </tr>
+                        <tr>
+                            <td>${msg['ins.repair.column.inTime']}</td>
+                            <td>${obj.inTime}</td>
+                        </tr>
+                        <tr>
+                            <td>${msg['ins.repair.column.pstatus']}</td>
+                            <td id="myStatus">${obj.pstatus}</td>
+                        </tr>
+                        <tr>
+                            <td>${msg['ins.repair.column.imgPath']}</td>
+                            <td ><div class="col-sm-8" id="imgPath">
+
+                            </div></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">${msg['globals.button.ok']}</button>
+</div>
+<script type="application/javascript">
+    var myStatus = "${obj.pstatus!}"
+    var pic = "${obj.imgPath!}";
+    $(function () {
+        //维修状态
+        if (myStatus == "0") {
+            $("#myStatus").html("申请");
+        } else if (myStatus == "1") {
+            $("#myStatus").html("维修中");
+        } else {
+            $("#myStatus").html("正常");
+        }
+        var imgtmp="";
+        if(pic){
+            var img = new Array();
+            img = pic.split(',');
+            img.forEach(function (data) {
+                imgtmp = imgtmp + "<img src='" + data + "' class='img-rounded' data-action='zoom' style='max-height: 100px'>&nbsp;&nbsp;"
+            })
+            $('#imgPath').html(imgtmp)
+
+        }
+    })
+
+</script>

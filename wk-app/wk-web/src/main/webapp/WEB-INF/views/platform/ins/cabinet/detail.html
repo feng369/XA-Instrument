@@ -1,0 +1,56 @@
+<div class="modal-body no-p">
+    <div class="row">
+        <div class="col-xs-12">
+            <section class="panel panel-primary no-b">
+                <header class="panel-heading clearfix brtl brtr">
+                    <div class="overflow-hidden">
+                        <a href="javascript:;" class="h4 show no-m pt5">智能柜表</a>
+                        <small>智能柜明细</small>
+                    </div>
+                </header>
+                <div class="list-group">
+                    <table class="table table-bordered table-striped mg-t datatable">
+                        <tbody>
+                                                        <tr>
+                                <td>${msg['ins.cabinet.column.cabinetname']}</td><td>${obj.cabinetname}</td>
+                            </tr>
+                                                        <tr>
+                                <td>${msg['ins.cabinet.column.cabinetnum']}</td><td>${obj.cabinetnum}</td>
+                            </tr>
+                                                        <tr>
+                                <td>${msg['ins.cabinet.column.address']}</td><td>${obj.address}</td>
+                            </tr>
+                                                        <tr>
+                                <td>${msg['ins.cabinet.column.pstatus']}</td><td id="mystatus"></td>
+                            </tr>
+                                                        <tr>
+                                <td>${msg['ins.cabinet.column.airportid']}</td><td>${obj.baseAirport.airportname!}</td>
+                            </tr>
+                                                        <tr>
+                                <td>柜子类型</td><td>${obj.sysType.name!}</td>
+                            </tr>
+                                                    </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">${msg['globals.button.ok']}</button>
+</div>
+
+<script type="application/javascript">
+    var pstatus = "${obj.pstatus}";
+
+    $(function(){
+        if(pstatus == "0"){
+            $("#mystatus").html("上线")
+        }else if(pstatus == "1"){
+            $("#mystatus").html("下线")
+        }else{
+            $("#mystatus").html("")
+        }
+    });
+
+</script>

@@ -1,0 +1,1159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="wk-web:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4640c413-c962-4dcb-9786-c4ed9b82bc3c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/sys/modules/models/Sys_hhh.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/generator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/generator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/getui/AppPush.java" beforeDir="false" afterPath="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/getui/AppPush.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/getui/GeTuiMessagePush.java" beforeDir="false" afterPath="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/getui/GeTuiMessagePush.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/web/commons/quartz/job/GetuiExecute.java" beforeDir="false" afterPath="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/web/commons/quartz/job/GetuiExecute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/web/modules/controllers/platform/ins/InsBaseinsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/web/modules/controllers/platform/ins/InsBaseinsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wk-app/wk-web/src/test/java/cn/wizzer/test/SimpleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/wk-app/wk-web/src/test/java/cn/wizzer/test/SimpleTest.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/wk-app/target/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/wk-app/wk-web/target/" />
+    <ignored path="$PROJECT_DIR$/wk-framework/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1176957996">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="45" />
+          <entry key="project.open.time.0" value="14" />
+          <entry key="project.open.time.1" value="3" />
+          <entry key="project.open.time.10" value="3" />
+          <entry key="project.open.time.11" value="2" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.13" value="2" />
+          <entry key="project.open.time.2" value="2" />
+          <entry key="project.open.time.5" value="5" />
+          <entry key="project.open.time.6" value="4" />
+          <entry key="project.open.time.7" value="4" />
+          <entry key="project.open.time.8" value="5" />
+          <entry key="project.opened" value="45" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="10" />
+          <entry key="html" value="24" />
+          <entry key="java" value="237" />
+          <entry key="js" value="1" />
+          <entry key="md" value="1" />
+          <entry key="png" value="1" />
+          <entry key="properties" value="29" />
+          <entry key="xml" value="10" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="10" />
+          <entry key="HTML" value="24" />
+          <entry key="Image" value="1" />
+          <entry key="JAVA" value="237" />
+          <entry key="JavaScript" value="1" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Properties" value="29" />
+          <entry key="XML" value="10" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="html" value="657" />
+          <entry key="java" value="5209" />
+          <entry key="properties" value="3" />
+          <entry key="txt" value="161" />
+          <entry key="xml" value="7" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="HTML" value="657" />
+          <entry key="JAVA" value="5209" />
+          <entry key="PLAIN_TEXT" value="161" />
+          <entry key="Properties" value="3" />
+          <entry key="XML" value="7" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/ins/modules/services/impl/InsInstrumentServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-7906">
+              <caret line="794" column="9" selection-start-line="794" selection-start-column="9" selection-end-line="794" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>context</find>
+      <find>orderentries</find>
+      <find>ConnCallback</find>
+      <find>/getCommonTools</find>
+      <find>GeTuiMessagePush</find>
+      <find>/doLogin</find>
+      <find>/getUserInfo</find>
+      <find>mm</find>
+      <find>doLo</find>
+      <find>addOrder</find>
+      <find>addOrderAndOrderEntryByMobile</find>
+      <find>DailyRollingFileAppender</find>
+      <find>getOrderListByPersonId</find>
+      <find>IGtPush</find>
+      <find>push</find>
+      <find>IPushResult</find>
+      <find>transmissionTemplate</find>
+      <find>masterSecret</find>
+      <find>pushMessage</find>
+      <find>sha</find>
+      <find>upload</find>
+      <find>space</find>
+      <find>ins.common.column.personid</find>
+      <find>&lt;%</find>
+      <find>&lt;%if</find>
+      <find>listenTran</find>
+      <find>getUserInfo</find>
+      <find>d</find>
+      <find>deploy</find>
+      <find>doCheckOrders</find>
+    </findStrings>
+    <dirStrings>
+      <dir>C:\Users\Administrator\IdeaProjects\XA-Instrument\wk-app</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/web/modules/controllers/platform/ins/InsInstrumentController.java" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/base/modules/services/impl/BasePersonServiceImpl.java" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/ins/modules/services/impl/InsToolcabinetServiceImpl.java" />
+        <option value="$PROJECT_DIR$/wk-framework/src/main/java/cn/wizzer/framework/util/StringUtil.java" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/webapp/WEB-INF/views/platform/ins/baseins/edit.html" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/webapp/WEB-INF/views/platform/ins/instrument/index.html" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/base/modules/models/base_airmeterial.java" />
+        <option value="$PROJECT_DIR$/wk-app/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/pom.xml" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/sys/modules/models/Sys_user.java" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/web/commons/quartz/job/getuiJob.java" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/web/commons/quartz/job/getuiExecute.java" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/web/commons/quartz/job/orderExecute.java" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/getui/PushList.java" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/getui/GeTuiModel.java" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/getui/Demo.java" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/ins/modules/services/InsOrderService.java" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/ins/modules/models/Ins_order.java" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/webapp/WEB-INF/views/platform/ins/order/stockOrders.html" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/web/modules/controllers/platform/ins/InsOrderController.java" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/getui/PushtoSingle.java" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/test/java/cn/wizzer/test/MyNutTestRunner.java" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/getui/IOSPush.java" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/resources/config/custom/db.properties" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/ins/modules/models/Ins_orderentry.java" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/ins/modules/services/impl/InsOrderServiceImpl.java" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/ins/modules/services/impl/InsCommonServiceImpl.java" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/web/modules/controllers/open/api/mobile/MobileSysController.java" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/sys/modules/services/impl/SysUserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/web/modules/controllers/open/api/mobile/MobileBaseController.java" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/resources/log4j.properties" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/test/java/cn/wizzer/test/SimpleTest.java" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/getui/AppPush.java" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/sys/modules/models/hhh.java" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/webapp/WEB-INF/views/platform/ins/common/detail.html" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/web/modules/controllers/platform/ins/InsBaseinsController.java" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/ins/modules/services/impl/InsBaseinsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/web/commons/quartz/job/GetuiExecute.java" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/getui/GeTuiMessagePush.java" />
+        <option value="$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/ins/modules/services/impl/InsInstrumentServiceImpl.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="NutzWk" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="NutzWk" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="NutzWk" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="wk-app" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="wk-app" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="wk-framework" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="wk-framework" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="wk-framework" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="wk-web" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="wk-web" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="196" />
+    <option name="y" value="36" />
+    <option name="width" value="1890" />
+    <option name="height" value="873" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="XA-Instrument" type="b2602c69:ProjectViewProjectNode" />
+              <item name="XA-Instrument" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="XA-Instrument" type="b2602c69:ProjectViewProjectNode" />
+              <item name="XA-Instrument" type="462c0819:PsiDirectoryNode" />
+              <item name="wk-app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="XA-Instrument" type="b2602c69:ProjectViewProjectNode" />
+              <item name="XA-Instrument" type="462c0819:PsiDirectoryNode" />
+              <item name="wk-app" type="462c0819:PsiDirectoryNode" />
+              <item name="wk-web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="XA-Instrument" type="b2602c69:ProjectViewProjectNode" />
+              <item name="XA-Instrument" type="462c0819:PsiDirectoryNode" />
+              <item name="wk-app" type="462c0819:PsiDirectoryNode" />
+              <item name="wk-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="XA-Instrument" type="b2602c69:ProjectViewProjectNode" />
+              <item name="XA-Instrument" type="462c0819:PsiDirectoryNode" />
+              <item name="wk-app" type="462c0819:PsiDirectoryNode" />
+              <item name="wk-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="XA-Instrument" type="b2602c69:ProjectViewProjectNode" />
+              <item name="XA-Instrument" type="462c0819:PsiDirectoryNode" />
+              <item name="wk-app" type="462c0819:PsiDirectoryNode" />
+              <item name="wk-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="XA-Instrument" type="b2602c69:ProjectViewProjectNode" />
+              <item name="XA-Instrument" type="462c0819:PsiDirectoryNode" />
+              <item name="wk-app" type="462c0819:PsiDirectoryNode" />
+              <item name="wk-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="XA-Instrument" type="b2602c69:ProjectViewProjectNode" />
+              <item name="XA-Instrument" type="462c0819:PsiDirectoryNode" />
+              <item name="wk-app" type="462c0819:PsiDirectoryNode" />
+              <item name="wk-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="XA-Instrument" type="b2602c69:ProjectViewProjectNode" />
+              <item name="XA-Instrument" type="462c0819:PsiDirectoryNode" />
+              <item name="wk-app" type="462c0819:PsiDirectoryNode" />
+              <item name="wk-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="XA-Instrument" type="b2602c69:ProjectViewProjectNode" />
+              <item name="XA-Instrument" type="462c0819:PsiDirectoryNode" />
+              <item name="wk-app" type="462c0819:PsiDirectoryNode" />
+              <item name="wk-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="XA-Instrument" type="b2602c69:ProjectViewProjectNode" />
+              <item name="XA-Instrument" type="462c0819:PsiDirectoryNode" />
+              <item name="wk-app" type="462c0819:PsiDirectoryNode" />
+              <item name="wk-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="SearchEverywhereHistoryKey" value="InsIns&#9;FILE&#9;file://C:/Users/Administrator/IdeaProjects/XA-Instrument/wk-app/wk-web/src/main/java/cn/wizzer/app/ins/modules/services/impl/InsInstrumentServiceImpl.java" />
+    <property name="last_opened_file_path" value="D:/Download/getuiSDK/GETUI_JAVA_SDK_4.1.0.0/GETUI_JAVA_SDK/资源文件/protobuf-java-2.5.0.jar!/" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\IdeaProjects\XA-Instrument\wk-app\wk-web\src\main\webapp\WEB-INF\views\platform\ins\order" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.XA_ins">
+    <configuration name="GeTuiMessagePush" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.wizzer.app.getui.GeTuiMessagePush" />
+      <module name="wk-web" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GetuiExecute" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.wizzer.app.web.commons.quartz.job.GetuiExecute" />
+      <module name="wk-web" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IOSPush" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.wizzer.app.getui.IOSPush" />
+      <module name="wk-web" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimpleTest.testGoods" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="wk-web" />
+      <option name="PACKAGE_NAME" value="cn.wizzer.test" />
+      <option name="MAIN_CLASS_NAME" value="cn.wizzer.test.SimpleTest" />
+      <option name="METHOD_NAME" value="testGoods" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimpleTest.testGoods1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="wk-web" />
+      <option name="PACKAGE_NAME" value="cn.wizzer.test" />
+      <option name="MAIN_CLASS_NAME" value="cn.wizzer.test.SimpleTest" />
+      <option name="METHOD_NAME" value="testGoods1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XA_ins" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.4" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:7080/" />
+      <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
+      <deployment>
+        <artifact name="wk-web:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_XA-Instrument" />
+        <option name="HTTP_PORT" value="7080" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="55179" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="wk-web:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.generator" />
+      <item itemvalue="Tomcat Server.XA_ins" />
+      <item itemvalue="Application.IOSPush" />
+      <item itemvalue="Application.GetuiExecute" />
+      <item itemvalue="JUnit.SimpleTest.testGoods" />
+      <item itemvalue="JUnit.SimpleTest.testGoods1" />
+      <item itemvalue="Application.GeTuiMessagePush" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.GeTuiMessagePush" />
+        <item itemvalue="JUnit.SimpleTest.testGoods" />
+        <item itemvalue="JUnit.SimpleTest.testGoods1" />
+        <item itemvalue="Application.IOSPush" />
+        <item itemvalue="Application.GetuiExecute" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TestHistory">
+    <history-entry file="SimpleTest_testGoods - 2018.10.23 at 15h 49m 44s.xml">
+      <configuration name="SimpleTest.testGoods" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SimpleTest_testGoods - 2018.10.23 at 15h 51m 35s.xml">
+      <configuration name="SimpleTest.testGoods" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SimpleTest_testGoods - 2018.10.23 at 16h 52m 26s.xml">
+      <configuration name="SimpleTest.testGoods" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SimpleTest_testGoods1 - 2018.10.24 at 11h 28m 03s.xml">
+      <configuration name="SimpleTest.testGoods1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SimpleTest_testGoods1 - 2018.10.24 at 11h 29m 33s.xml">
+      <configuration name="SimpleTest.testGoods1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SimpleTest_testGoods - 2018.10.24 at 14h 55m 05s.xml">
+      <configuration name="SimpleTest.testGoods" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SimpleTest_testGoods - 2018.10.24 at 14h 58m 06s.xml">
+      <configuration name="SimpleTest.testGoods" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SimpleTest_testGoods - 2018.10.24 at 15h 02m 20s.xml">
+      <configuration name="SimpleTest.testGoods" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SimpleTest_testGoods - 2018.10.24 at 15h 04m 42s.xml">
+      <configuration name="SimpleTest.testGoods" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SimpleTest_testGoods - 2018.10.24 at 15h 05m 12s.xml">
+      <configuration name="SimpleTest.testGoods" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49482402" visible="true" weight="0.19886823" />
+      <window_info id="Structure" order="1" sideWeight="0.505176" side_tool="true" weight="0.27938145" />
+      <window_info id="Web" order="2" sideWeight="0.5010352" side_tool="true" weight="0.2556701" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" sideWeight="0.50672644" side_tool="true" weight="0.34226805" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3291815" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4335512" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5163399" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3267974" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32712215" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32919255" />
+      <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.32919255" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.33451957" />
+      <window_info anchor="bottom" id="Application Servers" order="12" weight="0.32919255" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24958402" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven Projects" order="4" weight="0.32821342" />
+      <window_info anchor="right" id="Database" order="5" weight="0.3298969" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49482402" visible="true" weight="0.28247422" />
+      <window_info id="Structure" order="1" sideWeight="0.505176" side_tool="true" weight="0.27938145" />
+      <window_info id="Web" order="2" sideWeight="0.5010352" side_tool="true" weight="0.2556701" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" sideWeight="0.50672644" side_tool="true" weight="0.34226805" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3291815" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4335512" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.48366013" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3267974" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32712215" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32919255" />
+      <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.32919255" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.33551198" />
+      <window_info anchor="bottom" id="Application Servers" order="12" weight="0.32919255" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24958402" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven Projects" order="4" weight="0.32821342" />
+      <window_info anchor="right" id="Database" order="5" weight="0.3298969" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1.." />
+    <MESSAGE value="20181016zhf1042&#10;&#10;1." />
+    <MESSAGE value="20181017zhf1429&#10;&#10;1.实体工具上线后便不能更改" />
+    <MESSAGE value="20181018zhf1646&#10;&#10;1.个推" />
+    <MESSAGE value="20181018zhf1716&#10;&#10;1." />
+    <MESSAGE value="20181018zhf1735&#10;&#10;1." />
+    <MESSAGE value="20181018zhf1737&#10;&#10;1." />
+    <MESSAGE value="20181019zhf1417&#10;&#10;1.个推" />
+    <MESSAGE value="20181019zhf1518&#10;&#10;1.预约下单超时提醒" />
+    <MESSAGE value="20181019zhf1526&#10;&#10;1.预约下单超时提醒" />
+    <MESSAGE value="20181022zhf1451&#10;&#10;1.备料完成" />
+    <MESSAGE value="20181022zhf1459&#10;&#10;1.备料完成" />
+    <MESSAGE value="20181022zhf1553&#10;&#10;1.定时任务" />
+    <MESSAGE value="20181022zhf1807&#10;&#10;1.透传消息" />
+    <MESSAGE value="20181022zhf1812&#10;&#10;1.透传消息" />
+    <MESSAGE value="20181023zhf1016&#10;&#10;1." />
+    <MESSAGE value="20181023zhf1025&#10;&#10;1." />
+    <MESSAGE value="20181023zhf1130&#10;&#10;1.新增工具" />
+    <MESSAGE value="20181023zhf1510&#10;&#10;1." />
+    <MESSAGE value="20181023zhf1523&#10;&#10;1." />
+    <MESSAGE value="20181023zhf1534&#10;&#10;1.GetuiExceute" />
+    <MESSAGE value="20181023zhf1623&#10;&#10;1.多对多" />
+    <MESSAGE value="20181023zhf1734&#10;&#10;1." />
+    <MESSAGE value="20181024zhf1618&#10;&#10;1." />
+    <MESSAGE value="20181024zhf1653&#10;&#10;1." />
+    <option name="LAST_COMMIT_MESSAGE" value="20181024zhf1653&#10;&#10;1." />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/ins/modules/services/InsOrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/web/modules/controllers/open/api/Datatime/newDataTime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="17" column="81" lean-forward="true" selection-start-line="17" selection-start-column="81" selection-end-line="17" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/nutz/nutz/1.r.62-SNAPSHOT/nutz-1.r.62-20170717.031040-88-sources.jar!/org/nutz/dao/impl/sql/run/NutDaoRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="158" selection-start-line="158" selection-end-line="158" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/ins/modules/services/impl/InsToolcabinetServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="99" column="16" selection-start-line="99" selection-start-column="16" selection-end-line="99" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/getui/PushtoSingle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="21" column="6" lean-forward="true" selection-start-line="21" selection-start-column="6" selection-end-line="23" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/Date.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17886">
+          <caret line="885" column="5" selection-start-line="885" selection-start-column="5" selection-end-line="885" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/test/java/cn/wizzer/test/OpenAPITest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2134">
+          <caret line="126" selection-start-line="126" selection-end-line="126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/base/modules/models/base_cnctobj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="35" column="27" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/test/java/cn/wizzer/test/MyNutTestRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="28" column="115" selection-start-line="28" selection-start-column="115" selection-end-line="28" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/ins/modules/models/Ins_baseins_space.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/web/modules/controllers/open/api/mobile/MobileInsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="190" column="83" selection-start-line="190" selection-start-column="83" selection-end-line="190" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/ins/modules/services/impl/InsCommonServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/getui/Demo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="858">
+          <caret line="44" column="41" lean-forward="true" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/sys/modules/services/SysUserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="27" column="54" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/sys/modules/services/impl/SysUserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4026">
+          <caret line="211" column="13" selection-start-line="211" selection-start-column="13" selection-end-line="211" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/web/modules/controllers/open/api/mobile/MobileSysController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2376">
+          <caret line="159" column="62" selection-start-line="159" selection-start-column="62" selection-end-line="159" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/ins/modules/services/impl/InsOrderServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="193" column="36" lean-forward="true" selection-start-line="193" selection-start-column="36" selection-end-line="193" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/logistics/modules/services/LogisticsOrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="726">
+          <caret line="40" column="51" selection-start-line="40" selection-start-column="51" selection-end-line="40" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/logistics/modules/services/impl/LogisticsOrderServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15224">
+          <caret line="730" column="60" selection-start-line="730" selection-start-column="60" selection-end-line="730" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="24" column="61" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/test/java/cn/wizzer/test/SimpleTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="1370" column="46" selection-start-line="1370" selection-start-column="26" selection-end-line="1370" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/getui/AppPush.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="24" column="61" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/com/gexin/platform/gexin-rp-sdk-http/4.1.0.0/gexin-rp-sdk-http-4.1.0.0.jar!/com/gexin/rp/sdk/http/IGtPush.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="45" column="11" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/resources/config/custom/db.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/webapp/WEB-INF/views/platform/sys/home.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/target/nutzwk/upload/uploadIns/rrlmvajppqgkeoll1202pii4vr.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/webapp/WEB-INF/views/platform/sys/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="397" column="19" lean-forward="true" selection-start-line="397" selection-start-column="19" selection-end-line="397" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/ins/modules/models/Ins_instrument.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/web/modules/controllers/platform/ins/InsInstrumentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="49" column="46" lean-forward="true" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/sys/modules/models/Sys_api.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="22" column="27" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="22" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/resources/locales/zh_CN/ins/common.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="3" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/sys/modules/models/Sys_hhh.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-framework/src/main/java/cn/wizzer/framework/base/model/BaseModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-164">
+          <caret line="37" column="18" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/web/modules/controllers/platform/ins/InsBaseinsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="66" column="40" selection-start-line="66" selection-start-column="40" selection-end-line="66" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/ins/modules/services/impl/InsBaseinsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="150" column="5" lean-forward="true" selection-start-line="150" selection-start-column="5" selection-end-line="150" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/ins/modules/models/Ins_order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13">
+          <caret line="46" column="18" lean-forward="true" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/webapp/WEB-INF/views/platform/ins/common/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="14" column="69" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/webapp/WEB-INF/views/platform/ins/common/edit.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/webapp/WEB-INF/views/platform/ins/common/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-286">
+          <caret line="2" column="2" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/webapp/WEB-INF/views/platform/base/cnctobj/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="32" column="50" lean-forward="true" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/getui/GeTuiMessagePush.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="34" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/web/modules/controllers/open/api/mobile/MobileBaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6688">
+          <caret line="339" column="38" selection-start-line="339" selection-start-column="30" selection-end-line="339" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/ins/modules/models/Ins_transmit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/ins/modules/models/Ins_baseins.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1320">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/ins/modules/models/Ins_orderentry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="902">
+          <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/web/modules/controllers/open/api/mobile/MobileOrderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6138">
+          <caret line="294" column="51" selection-start-line="294" selection-start-column="33" selection-end-line="294" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/ins/modules/services/impl/InsOrderentryServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5126">
+          <caret line="258" column="5" selection-start-line="258" selection-start-column="5" selection-end-line="258" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/web/commons/quartz/job/GetuiExecute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2200">
+          <caret line="132" column="49" selection-start-line="132" selection-start-column="49" selection-end-line="132" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1078">
+          <caret line="49" column="23" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/ins/modules/models/Ins_toolcabinet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="8" column="48" lean-forward="true" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wk-app/wk-web/src/main/java/cn/wizzer/app/ins/modules/services/impl/InsInstrumentServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7906">
+          <caret line="794" column="9" selection-start-line="794" selection-start-column="9" selection-end-line="794" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>wk-web:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Invalid</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>wk-parent</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: bouncycastle:bcprov-jdk16:140</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

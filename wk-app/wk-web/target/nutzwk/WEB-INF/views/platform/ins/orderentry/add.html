@@ -1,0 +1,117 @@
+<%
+layout("/layouts/platform.html"){
+%>
+<header class="header navbar bg-white shadow">
+    <div class="btn-group tool-button">
+        <a class="btn btn-primary navbar-btn" href="${base}/platform/ins/orderentry" id="goBack" data-pjax><i class="ti-angle-left"></i>${msg['globals.button.back']}</a>
+    </div>
+</header>
+
+<div class="content-wrap">
+    <div class="wrapper" style="min-height:500px;">
+        <section class="panel panel-form">
+            <form id="addForm" role="form" class="form-horizontal parsley-form" data-parsley-validate
+                  action="${base}/platform/ins/orderentry/addDo" method="post">
+                <div class="row mb10">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label for="insId" class="col-sm-2 control-label">${msg['ins.orderentry.column.insId']}</label>
+                            <div class="col-sm-8">
+                            <input type="text" id="insId" class="form-control" name="insId" data-parsley-required="true" placeholder="${msg['ins.orderentry.column.insId']}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="itype" class="col-sm-2 control-label">${msg['ins.orderentry.column.itype']}</label>
+                            <div class="col-sm-8">
+                            <input type="text" id="itype" class="form-control" name="itype" data-parsley-required="true" placeholder="${msg['ins.orderentry.column.itype']}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="orderid" class="col-sm-2 control-label">${msg['ins.orderentry.column.orderid']}</label>
+                            <div class="col-sm-8">
+                            <input type="text" id="orderid" class="form-control" name="orderid" data-parsley-required="true" placeholder="${msg['ins.orderentry.column.orderid']}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="number" class="col-sm-2 control-label">${msg['ins.orderentry.column.number']}</label>
+                            <div class="col-sm-8">
+                            <input type="text" id="number" class="form-control" name="number" data-parsley-required="true" placeholder="${msg['ins.orderentry.column.number']}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="pstatus" class="col-sm-2 control-label">${msg['ins.orderentry.column.pstatus']}</label>
+                            <div class="col-sm-8">
+                            <input type="text" id="pstatus" class="form-control" name="pstatus" data-parsley-required="true" placeholder="${msg['ins.orderentry.column.pstatus']}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="outorder" class="col-sm-2 control-label">${msg['ins.orderentry.column.outorder']}</label>
+                            <div class="col-sm-8">
+							<form:select path="outorder" class="" placeholder="${msg['ins.orderentry.column.outorder']}">
+								<form:option value="true">${msg['globals.table.column.true']}</form:option>
+								<form:option value="false">${msg['globals.table.column.false']}</form:option>
+							</form:select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="outnumber" class="col-sm-2 control-label">${msg['ins.orderentry.column.outnumber']}</label>
+                            <div class="col-sm-8">
+                            <input type="text" id="outnumber" class="form-control" name="outnumber" data-parsley-required="true" placeholder="${msg['ins.orderentry.column.outnumber']}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="operator" class="col-sm-2 control-label">${msg['ins.orderentry.column.operator']}</label>
+                            <div class="col-sm-8">
+                            <input type="text" id="operator" class="form-control" name="operator" data-parsley-required="true" placeholder="${msg['ins.orderentry.column.operator']}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="operatetime" class="col-sm-2 control-label">${msg['ins.orderentry.column.operatetime']}</label>
+                            <div class="col-sm-8">
+                            <input type="text" id="operatetime" class="form-control" name="operatetime" data-parsley-required="true" placeholder="${msg['ins.orderentry.column.operatetime']}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="starttime" class="col-sm-2 control-label">${msg['ins.orderentry.column.starttime']}</label>
+                            <div class="col-sm-8">
+                            <input type="text" id="starttime" class="form-control" name="starttime" data-parsley-required="true" placeholder="${msg['ins.orderentry.column.starttime']}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6">
+                    <div class="form-group text-center">
+                        <label></label>
+
+                        <div>
+                            <button class="btn btn-primary btn-block btn-lg btn-parsley" data-loading-text="${msg['globals.button.submit.tip']}">${msg['globals.button.submit']}</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+<script language="JavaScript">
+    $(document).ready(function () {
+        $('#addForm').ajaxForm({
+            dataType: 'json',
+            beforeSubmit: function (arr, form, options) {
+                form.find("button:submit").button("loading");
+            },
+            success: function (data, statusText, xhr, form) {
+                if (data.code == 0) {
+                    Toast.success(data.msg);
+                    form.resetForm();
+                } else {
+                    Toast.error(data.msg);
+                }
+                form.find("button:submit").button("reset");
+            }
+        });
+    });
+</script>
+<%}%>
+
+

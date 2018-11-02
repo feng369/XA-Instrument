@@ -1,0 +1,112 @@
+<section class="content-wrap bg-white">
+    <header class="header navbar bg-white shadow">
+        <div class="pull-left offscreen-left" style="padding-top:15px;">
+            <div class="form-group">
+                <input id="insName" class="form-control" type="text" onclick="this.value='';" placeholder="请输入基础工具名称/编码">
+            </div>
+        </div>
+        <div class="pull-right offscreen-right btn-group tool-button">
+            <a class="btn btn-primary navbar-btn" onclick="_selectOn()">确定</a>
+        </div>
+    </header>
+    <div class=panel-body style="padding-top: 50px;">
+        <div class="table-responsive no-border" style="padding-top: 5px;" >
+            <input id="unitid" type="hidden">
+            <table id="datatable_select" class="table table-bordered table-striped mg-t datatable">
+                <thead>
+                <tr>
+                    <th>基本工具编号</th>
+                    <th>基本工具名称</th>
+                    <th>基本工具类别</th>
+                    <th>基本工具参数</th>
+                    <th>基本工具型号</th>
+                    <th>所属单位</th>
+            </table>
+        </div>
+    </div>
+</section>
+<script language="JavaScript">
+    var datatable_select;
+    function initdatatable_select() {
+        datatable_select = $('#datatable_select').DataTable({
+            "dom": '<"toolbar">frtip',
+            "searching":false,
+            "processing": false,
+            "serverSide": true,
+            "select": true,
+            "ordering": true,
+            "language": {
+                "url": "${base}/assets/plugins/datatables/cn.json"
+            },
+            "ajax": {
+                "url": "${base}/platform/ins/baseins/data",
+                "type": "post",
+                "data": function (d) {
+                    d.keyword = $("#insName").val();
+                    //只显示已启动的基础工具
+                    d.pstatus = "1"
+                }
+            },
+            "order": [[0, "desc"]],
+            "columns": [
+                {"data": "insnum", "bSortable": true, "render": function (data, type, row) {
+                        return data ? data : "";
+                    }},
+                {"data": "insname", "bSortable": true, "render": function (data, type, row) {
+                        return data ? data : "";
+                    }},
+                {"data": "instype", "bSortable": true, "render": function (data, type, row) {
+                        return row.dict_instype ? row.dict_instype.name : "";
+                }},
+                {"data": "insparam", "bSortable": true, "render": function (data, type, row) {
+                        return data ? data : "";
+                    }
+                },
+                {"data": "insmodel", "bSortable": true, "render": function (data, type, row) {
+                        return data ? data : "";
+                    }
+                },
+                {"data": "", "bSortable": false, "render": function (data, type, row) {
+                        return row.sys_insunit ? row.sys_insunit.name : "";
+                    }
+                },
+            ],
+            "columnDefs": [
+                {
+
+                }
+            ]
+        });
+        datatable_select.on('click', 'tr', function () {
+            // $(this).toggleClass('selected');
+            if ($(this).hasClass("selected")) {
+                $(this).removeClass("selected")
+            } else {
+                datatable_select.$('tr.selected').removeClass('selected');
+                $(this).addClass('selected');
+            }
+        });
+        $("#insName").on('input', function () {
+            datatable_select.ajax.reload();
+        });
+    }
+           function _selectAll(){
+        $("#datatable_select").find("tr").each(function () {
+            if (!$(this).hasClass('selected'))
+                $(this).addClass('selected');
+        });
+    }
+    function _selectOn(){
+        var chks = datatable_select.rows('.selected').data();
+        if(chks.length == 0){
+            Toast.warning("请先选择基础工具!");
+        }else if(chks.length == 1){
+            this.parent.baseInsObj = chks;
+            $('#dialogSelectBaseIns').modal('hide');
+        }
+    }
+    $(document).ready(function () {
+        initdatatable_select();
+    });
+
+</script>

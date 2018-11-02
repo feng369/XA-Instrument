@@ -1,0 +1,38 @@
+<div class="modal-body no-p">
+    <div class="row">
+        <div class="col-xs-12">
+            <section class="panel panel-primary no-b">
+                <header class="panel-heading clearfix brtl brtr">
+                    <div class="overflow-hidden">
+                        <a href="javascript:;" class="h4 show no-m pt5">移交表</a>
+                        <small>${obj.id}</small>
+                    </div>
+                </header>
+                <div class="list-group">
+                    <table class="table table-bordered table-striped mg-t datatable">
+                        <tbody>
+                                                        <tr>
+                                <td>${msg['ins.transmit.column.orderid']}</td><td>${obj.orderid}</td>
+                            </tr>
+                                                        <tr>
+                                <td>${msg['ins.transmit.column.insid']}</td><td>${obj.insid}</td>
+                            </tr>
+                                                        <tr>
+                                <td>${msg['ins.transmit.column.passer']}</td><td>${obj.passer}</td>
+                            </tr>
+                                                        <tr>
+                                <td>${msg['ins.transmit.column.operator']}</td><td>${obj.operator}</td>
+                            </tr>
+                                                        <tr>
+                                <td>${msg['ins.transmit.column.operatetime']}</td><td>${obj.operatetime}</td>
+                            </tr>
+                                                    </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">${msg['globals.button.ok']}</button>
+</div>

@@ -1,0 +1,175 @@
+<%
+layout("/layouts/platform.html"){
+%>
+<header class="header navbar bg-white shadow">
+    <div class="btn-group tool-button">
+        <a class="btn btn-primary navbar-btn" href="${base}/platform/ins/space" id="goBack" data-pjax><i class="ti-angle-left"></i>${msg['globals.button.back']}</a>
+    </div>
+</header>
+
+<div class="content-wrap">
+    <div class="wrapper" style="min-height:500px;">
+        <section class="panel panel-form">
+            <form id="editForm" role="form" class="form-horizontal parsley-form" data-parsley-validate
+                  action="${base}/platform/ins/space/editDo" method="post">
+                <input name="id" type="hidden" value="${obj.id}">
+                <div class="row mb10">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label for="spacenum" class="col-sm-2 control-label">${msg['ins.space.column.spacenum']}</label>
+                            <div class="col-sm-8" id="numDiv">
+                                <input type="text" id="spacenum" class="form-control" name="spacenum" data-parsley-required="true"
+                                       placeholder="${msg['ins.space.column.spacenum']}" value="${obj.spacenum}" >
+                                <img src="/assets/img/loading.gif" hidden>
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <label for="spacename" class="col-sm-2 control-label">${msg['ins.space.column.spacename']}</label>
+                            <div class="col-sm-8">
+                                <input type="text" id="spacename" class="form-control" name="spacename" data-parsley-required="true"
+                                       placeholder="${msg['ins.space.column.spacename']}" value="${obj.spacename}" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="params" class="col-sm-2 control-label">${msg['ins.space.column.params']}</label>
+                            <div class="col-sm-8">
+                                <input type="text" id="params" class="form-control" name="params"
+                                       placeholder="${msg['ins.space.column.params']}" value="${obj.params}" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="model" class="col-sm-2 control-label">${msg['ins.space.column.model']}</label>
+                            <div class="col-sm-8">
+                                <input type="text" id="model" class="form-control" name="model" placeholder="${msg['ins.space.column.model']}" value="${obj.model}" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address" class="col-sm-2 control-label">${msg['ins.space.column.address']}</label>
+                            <div class="col-sm-8">
+                                <input type="text" id="address" class="form-control" name="address"
+                                       placeholder="${msg['ins.space.column.address']}" value="${obj.address}" >
+                            </div>
+                        </div>
+                        <!--<div class="form-group">
+                            <label for="barcode" class="col-sm-2 control-label">${msg['ins.space.column.barcode']}</label>
+                            <div class="col-sm-8">
+                                <input type="text" id="barcode" class="form-control" name="barcode" data-parsley-required="true"
+                                       placeholder="${msg['ins.space.column.barcode']}" value="${obj.barcode}" >
+                            </div>
+                        </div>-->
+                        <div class="form-group">
+                            <label for="pstatus" class="col-sm-2 control-label">${msg['ins.cabinet.column.pstatus']}</label>
+                            <div class="col-sm-8">
+                                <select id="pstatus" name="pstatus" class="form-control" data-parsley-required="true">
+                                    <option value="">请选择</option>
+                                    <option value="0" selected>关闭</option>
+                                    <option value="1">打开</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <label for="cabinetid" class="col-sm-2 control-label">所属智能柜</label>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <input id="cabinetName" type="text" class="form-control"  data-parsley-required="true" placeholder="选择智能柜" disabled
+                                           value="${obj.insCabinet.cabinetname!}" />
+                                    <span class="input-group-btn">
+                                                    <a  class="btn btn-primary" data-toggle="modal"
+                                                        href="${base}/platform/ins/cabinet/selectCabinet"    data-target="#dialogCabinet"><i class="ti-plus"></i>选择
+                                                    </a>
+			                             		</span>
+                                </div>
+                                <input  data-parsley-required="true" type="hidden" id="cabinetid" name="cabinetid" value="${obj.cabinetid}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6">
+                    <div class="form-group text-center">
+                        <label></label>
+
+                        <div>
+                            <button class="btn btn-primary btn-block btn-lg btn-parsley" data-loading-text="${msg['globals.button.submit.tip']}">${msg['globals.button.submit']}</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+    </div>
+</div>
+<div id="dialogCabinet" class="modal fade bs-modal-sm" tabindex="-3" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" style="width: 700px;">
+        <div class="modal-content" style="width: 700px;">
+        </div>
+    </div>
+</div>
+<script language="JavaScript">
+    var flag = false;
+    var editNum = "${obj.spacenum!}";
+    $("#numDiv input").blur(function () {
+        var numVal = $(this).val();
+        $.ajax({
+            url:"${base}/platform/ins/space/countByNum",
+            data:{num:numVal},
+            type:"POST",
+            beforeSend:function () {
+                $("#numDiv").next("img").show()
+            },
+            success:function (data) {
+                if(data > 0 && numVal != editNum ){
+                    flag = true;
+                    $("#numDiv").addClass("has-error");
+                    $("#numDiv span").show();
+                }else{
+                    flag = false;
+                    $("#numDiv span").hide();
+                    $("#numDiv").removeClass("has-error")
+                }
+            },
+            complete:function () {
+                $("#numDiv").next("img").hide()
+            }
+        });
+    });
+    var cabinetObj = null;
+    $("#dialogCabinet").on("hidden.bs.modal",function(){
+        $("#cabinetid").val(cabinetObj[0].id);
+        $("#cabinetName").val(cabinetObj[0].cabinetname);
+        $(this).removeData("bs.modal");
+    });
+
+    var pstatusVal = "${obj.pstatus}";
+    $(document).ready(function () {
+        $("#pstatus option[value="+pstatusVal+"]").prop("selected",true);
+        $('#editForm').ajaxForm({
+            dataType: 'json',
+            beforeSubmit: function (arr, form, options) {
+                if(flag){
+                    $("#numDiv input").focus();
+                    $("#numDiv").addClass("has-error");
+                    $("#numDiv span").show();
+                    Toast.warning("该编码已经存在")
+                    return false;
+                }else{
+                    $("#numDiv").removeClass("has-error")
+                }
+                form.find("button:submit").button("loading");
+            },
+            success: function (data, statusText, xhr, form) {
+                if (data.code == 0) {
+                    Toast.success(data.msg);
+                    setTimeout(function () {
+                        $("#goBack").trigger("click");
+                    }, 1000);
+                } else {
+                    Toast.error(data.msg);
+                }
+                form.find("button:submit").button("reset");
+            }
+        });
+    });
+</script>
+<%}%>

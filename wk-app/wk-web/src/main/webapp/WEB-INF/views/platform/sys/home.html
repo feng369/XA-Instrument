@@ -1,0 +1,86 @@
+<%
+layout("/layouts/platform.html"){
+%>
+<!--suppress ALL -->
+<!--20180302zhf1015-->
+<style type="text/css">
+
+    .triTop{
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: 2px;
+        vertical-align: middle;
+        border-right: 4px solid transparent;
+        border-left: 4px solid transparent;
+        border-bottom: 4px solid;
+    }
+    body{
+        overflow:scroll;
+        overflow-y:hidden;
+    }
+    .myTri{}
+</style>
+
+<div class="container-fluid">
+    <div style=" position: relative;top:10px;right: -20px;height: 0px;">
+        <!--20180302zhf1015-->
+        <div id="oderOne"  data-toggle="collapse" href="#dd"  style="position: relative; top: 10px;width: 90px;z-index: 2">
+          <h4>
+            <a class="myTri">
+                订单管理
+                <span class="caret" id="tri"></span>
+            </a>
+          </h4>
+        </div>
+    </div>
+
+    <div class="row collapse in"  id="dd" style=" position: relative;" >
+        <div >
+        <a class="col-xs-8 col-sm-6 d1">
+            <div class="bb" id="orderOne">0<span>今日订单</span></div>
+            <div class="d1_bg"></div>
+        </a>
+        <a class="col-xs-8 col-sm-6 d3">
+            <div class="bb" id="orderThree">0<span>本月订单</span></div>
+            <div class="d3_bg"></div>
+        </a>
+        </div>
+    </div>
+</div>
+<script type="application/javascript">
+    //20180302zhf1015
+    $(".myTri").click(function () {
+        var obj = $(this).find("span");
+        $(this).toggleClass(function () {
+            if(obj.hasClass("caret")){
+                obj.removeClass("caret");
+                obj.addClass("triTop");
+            }else{
+                obj.removeClass("triTop");
+                obj.addClass("caret");
+            }
+        });
+    });
+
+    var url="/platform/ins/order/getOrderCount";
+    var sendGoods = false;
+    function completeHtml(data) {
+        $("#orderOne").html(data.todayOrders + "<span>今日订单</span>");
+        $("#orderThree").html(data.tMonthOrders+"<span>本月订单</span>");
+    }
+    function countByType(url) {
+        $.ajax({
+            type: "POST",
+            url: url,
+            dataType:"json",
+            success: function(data){
+                completeHtml(data);
+            }
+        });
+    }
+    $(function () {
+        countByType(url);
+    });
+</script>
+<%}%>

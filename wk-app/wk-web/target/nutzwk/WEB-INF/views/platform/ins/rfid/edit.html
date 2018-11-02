@@ -1,0 +1,139 @@
+<%
+layout("/layouts/platform.html"){
+%>
+<header class="header navbar bg-white shadow">
+    <div class="btn-group tool-button">
+        <a class="btn btn-primary navbar-btn" href="${base}/platform/ins/rfid" id="goBack" data-pjax><i class="ti-angle-left"></i>${msg['globals.button.back']}</a>
+    </div>
+</header>
+
+<div class="content-wrap">
+    <div class="wrapper" style="min-height:500px;">
+        <section class="panel panel-form">
+            <form id="editForm" role="form" class="form-horizontal parsley-form" data-parsley-validate
+                  action="${base}/platform/ins/rfid/editDo" method="post">
+                <input name="id" type="hidden" value="${obj.id}">
+                <div class="row mb10">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label for="number" class="col-sm-2 control-label">${msg['ins.rfid.column.number']}</label>
+                            <div class="col-sm-8" id="numDiv">
+                                <input type="text" id="number" class="form-control" name="number" data-parsley-required="true"
+                                       placeholder="${msg['ins.rfid.column.number']}" value="${obj.number}" >
+                                <span style="color:red " id="errImfo" hidden>该标签号已经存在</span>
+                            </div>
+                            <img src="/assets/img/loading.gif" id="loading" hidden>
+                        </div>
+                        <div class="form-group">
+                            <label for="pstatus" class="col-sm-2 control-label">${msg['ins.rfid.column.pstatus']}</label>
+                            <div class="col-sm-8">
+                                <select id="pstatus" name="pstatus" class="form-control" data-parsley-required="true">
+                                    <option value="">请选择</option>
+                                    <option value="0">未使用</option>
+                                    <option value="1">使用</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <label for="airportName" class="col-sm-2 control-label">所属机场</label>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <input id="airportName" type="text" class="form-control"  data-parsley-required="true" placeholder="选择机场" disabled
+                                           value="${obj.baseAirport.airportname!}" />
+                                    <span class="input-group-btn">
+                                                    <a  class="btn btn-primary" data-toggle="modal"
+                                                        href="${base}/platform/base/airport/selectAirport"    data-target="#dialogAirportSelect"><i class="ti-plus"></i>选择
+                                                    </a>
+			                             		</span>
+                                </div>
+                                <input  data-parsley-required="true" type="hidden" id="airportid" name="airportid" value="<%if(!isEmpty(obj)){%>${obj.airportid}<%}%>">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6">
+                    <div class="form-group text-center">
+                        <label></label>
+
+                        <div>
+                            <button class="btn btn-primary btn-block btn-lg btn-parsley" data-loading-text="${msg['globals.button.submit.tip']}">${msg['globals.button.submit']}</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+    </div>
+</div>
+<!-- 选择机场 -->
+<div id="dialogAirportSelect" class="modal fade bs-modal-sm" tabindex="-3" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" style="width: 700px;">
+        <div class="modal-content" style="width: 700px;">
+        </div>
+    </div>
+</div>
+<script language="JavaScript">
+
+    var flag = true;
+    //编码校验
+    $("#number").blur(function () {
+        $.ajax({
+            type: "POST",
+            url: "/platform/ins/rfid/getNumberCount",
+            data: {number:$("#number").val().toUpperCase()},
+            beforeSend:function () {
+                $("#loading").show();
+            },
+            success: function(count){
+                if(count > 0 && $("#number").val().toUpperCase() !="${obj.number}"){
+                    //已经存在
+                    $("#errImfo").show();
+                    $("#numDiv").addClass("has-error");
+                    flag = false;
+                }else{
+                    $("#errImfo").hide();
+                    $("#numDiv").removeClass("has-error");
+                    flag = true;
+                }
+            },
+            complete:function () {
+                $("#loading").hide();
+            }
+        });
+        return flag;
+    });
+
+    var airportObj = null;
+    $("#dialogAirportSelect").on("hidden.bs.modal",function(){
+        $("#airportid").val(airportObj[0].id);
+        $("#airportName").val(airportObj[0].airportname);
+        $(this).removeData("bs.modal");
+    });
+    var pstatusVal = "${obj.pstatus}";
+    $(document).ready(function () {
+        $("#pstatus option[value="+pstatusVal+"]").prop("selected",true);
+        $('#editForm').ajaxForm({
+            dataType: 'json',
+            beforeSubmit: function (arr, form, options) {
+                if(!flag){
+                    $("#number").focus();
+                    return false;
+                }
+                form.find("button:submit").button("loading");
+            },
+            success: function (data, statusText, xhr, form) {
+                if (data.code == 0) {
+                    Toast.success(data.msg);
+                    setTimeout(function () {
+                        $("#goBack").trigger("click");
+                    }, 1000);
+                } else {
+                    Toast.error(data.msg);
+                }
+                form.find("button:submit").button("reset");
+            }
+        });
+    });
+</script>
+<%}%>

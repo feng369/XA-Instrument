@@ -1,0 +1,616 @@
+<%
+layout("/layouts/platform.html"){
+%>
+<section class="content-wrap bg-white">
+    <header class="header navbar bg-white shadow">
+        <div class="btn-group tool-button">
+            <% if(@shiro.hasPermission('platform.ins.instrument.add')){ %>
+            <a id="add" class="btn btn-primary navbar-btn" href="${base}/platform/ins/instrument/add" data-pjax><i
+                    class="ti-plus"></i> ${msg['globals.button.add']}</a>
+            <%}%>
+            <% if(@shiro.hasPermission('platform.ins.instrument.delete')){ %>
+            <button class="btn btn-danger navbar-btn" onclick="delCheck()"><i class="ti-close"></i>
+                ${msg['globals.button.delete.more']}
+            </button>
+            <%}%>
+            <% if(@shiro.hasPermission('platform.ins.instrument.space')){ %>
+            <!--<button id="setSpace" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#spaceModal"><i
+                    class="ti-layout-grid2"></i> 分配仓位
+            </button>-->
+            <%}%>
+            <% if(@shiro.hasPermission('platform.ins.instrument.onLine')){ %>
+            <button id="onLineIns" class="btn btn-primary navbar-btn" data-toggle="modal"><i class="ti-arrow-up"></i>上线
+            </button>
+            <%}%>
+            <% if(@shiro.hasPermission('platform.ins.instrument.offLine')){ %>
+            <button id="offLineIns" class="btn btn-primary navbar-btn" data-toggle="modal"><i class="ti-arrow-down"></i>
+                下线
+            </button>
+            <%}%>
+            <% if(@shiro.hasPermission('platform.ins.instrument.unbindRFIDs')){ %>
+            <button id="unbindRFID" class="btn btn-primary navbar-btn" data-toggle="modal"><i class="ti-unlock"></i>
+                解绑射频标签
+            </button>
+            <%}%>
+            <!--   <form id="uploadForm" action="${base!}/platform/ins/instrument/uploadIns" enctype="multipart/form-data" method="post">
+                   <input type="file" name="uploads" style="display: none" accept="image/jpeg,image/jpg,image/png" onchange="uploadImg('uploadForm')">
+                   <input  id="insId" name="insId" value="" hidden/>
+               </form>-->
+
+        </div>
+        <div class="pull-right offscreen-right">
+            <button class="btn btn-primary navbar-btn" onclick="sublime.toggleFilter('.cd-panel')"><i
+                    class="fa fa-sliders"></i> 筛选
+            </button>
+        </div>
+    </header>
+    <div class=panel-body style="padding-top: 50px;">
+        <div class="table-responsive no-border">
+            <table class="table table-bordered table-striped mg-t datatable">
+                <thead>
+                <tr>
+                    <th>${msg['ins.instrument.column.insnum']}</th>
+                    <th>${msg['ins.instrument.column.insname']}</th>
+                    <th>${msg['ins.instrument.column.insmodel']}</th>
+                    <!--<th>${msg['ins.instrument.column.insunit']}</th>-->
+                    <!--<th>${msg['ins.instrument.column.toolPic']}</th>-->
+                    <!--<th>${msg['ins.instrument.column.describ']}</th>-->
+                    <!--<th>${msg['ins.instrument.column.instype']}</th>-->
+                    <th>${msg['ins.instrument.column.pstatus']}</th>
+                    <th>上线状态</th>
+
+                    <th>${msg['ins.instrument.column.rfid']}</th>
+                    <th>所属仓位</th>
+                    <th>所属智能柜</th>
+                    <!--<th>${msg['ins.instrument.column.insspaceid']}</th>-->
+                    <th>${msg['globals.table.column.operation']}</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade" id="spaceModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    分配仓位 &nbsp&nbsp<input id="spaceName" type="text" size="19"
+                                          style="height: 30px;padding: 6px 12px;font-size: 14px;"
+                                          onclick="this.value='';" placeholder="请输入仓位编号或名称">
+                </h4>
+
+            </div>
+            <div class="modal-body">
+                <table id="datatable_select_space"
+                       class="table table-bordered table-striped mg-t datatable_selectstake">
+                    <thead>
+                    <tr>
+                        <th>仓位编号</th>
+                        <th>仓位名称</th>
+                        <th>所属智能柜</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+                <button type="button" class="btn btn-primary" onclick="mSubmit()">确定
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+<div id="dialogDelete" class="modal fade bs-modal-sm" tabindex="-2" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">${msg['globals.button.delete']}</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        ${msg['globals.button.delete.notice']}
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">${msg['globals.button.cancel']}
+                </button>
+                <button id="okDel" type="button" class="btn btn-primary"
+                        data-loading-text="${msg['globals.button.delete.tip']}">${msg['globals.button.confirm']}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="dialogDetail" class="modal fade bs-modal-sm" tabindex="-3" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+<div id="rfidDetail" class="modal fade bs-modal-sm" tabindex="-3" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+<div class="cd-panel from-right">
+    <form id="selectForm">
+        <header class="cd-panel-header">
+            <h4>高级筛选</h4>
+        </header>
+        <div class="cd-panel-container">
+            <div class="cd-panel-content shadow">
+                <div class="form-group">
+                    <label for="insnum">工具编号</label>
+                    <input type="text" id="insnum" name="insnum" onclick="this.value=''" class="form-control" placeholder="工具编号" autofocus>
+                </div>
+                <div class="form-group">
+                    <label for="insname">工具名称</label>
+                    <input type="text" id="insname" name="insname" onclick="this.value=''" class="form-control" placeholder="工具名称" autofocus>
+                </div>
+                <div class="form-group">
+                    <label for="number">工具RFID</label>
+                    <input type="text" id="number" name="number" onclick="this.value=''" class="form-control" placeholder="工具RFID" autofocus>
+                </div>
+                <div class="form-group">
+                    <label for="pstatus" >借用状态</label>
+                    <select  id="pstatus" name="pstatus" class="form-control">
+                        <option value="">请选择</option>
+                        <option value="0">未借用</option>
+                        <option value="2">借用中</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="linePstatus" >上线状态</label>
+                    <select  id="linePstatus" name="pstatus" class="form-control">
+                        <option value="">请选择</option>
+                        <option value="0">下线</option>
+                        <option value="1">上线</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="cabinetId">所属智能柜</label>
+                    <select id="cabinetId" class="form-control">
+                        <option value="">请选择</option>
+                        <script type="application/javascript">
+                            $.get("${base!}/platform/ins/cabinet/getCabinetList",function (data) {
+                                data.forEach(function (data) {
+                                    $("#cabinetId").append("<option value='"+data.id+"'>"+data.cabinetname+"</option>");
+                                })
+                            });
+                        </script>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="spaceId">所属仓位</label>
+                    <select id="spaceId" class="form-control">
+                        <option value="">请先选择智能柜</option>
+                    </select>
+                </div>
+                <button id="searchBtn" type="button"  class="btn btn-primary" >查询</button>
+                <button id="resetBtn" type="button" class="btn btn-default">重置</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script language="JavaScript">
+    var datatable, spacetable;
+
+    function select_spacetable() {
+        spacetable = $('#datatable_select_space').DataTable({
+            "dom": '<"toolbar">frtip',
+            "searching": false,
+            "processing": false,
+            "serverSide": true,
+            "select": true,
+            "ordering": true,
+            "language": {
+                "url": "${base}/assets/plugins/datatables/cn.json"
+            },
+            "ajax": {
+                "url": "${base}/platform/ins/space/data",
+                "type": "post",
+                "data": function (d) {
+                    d.keyword = $("#spaceName").val();
+                }
+            },
+            "order": [[0, "desc"]],
+            "columns": [
+                {
+                    "data": "spacenum", "bSortable": true, "render": function (data, type, row, meta) {
+                        return data ? data : "";
+                    }
+                },
+                {
+                    "data": "spacename", "bSortable": true, "render": function (data, type, row, meta) {
+                        return data ? data : "";
+                    }
+                },
+                {
+                    "data": "insCabinet.cabinetname", "bSortable": false, "render": function (data, type, row, meta) {
+                        return data ? data : "";
+                    }
+                },
+            ]
+        });
+        spacetable.on('click', 'tr', function () {
+            if ($(this).hasClass('selected')) {
+                $(this).removeClass('selected');
+            } else {
+                spacetable.$('tr.selected').removeClass('selected');
+                $(this).addClass('selected');
+            }
+        });
+        // $("#name").on('keyup', function () {
+        //     staketable.ajax.reload();
+        // });
+
+        $("#spaceName").on("input", function () {
+            spacetable.ajax.reload();
+        });
+    }
+
+    function initDatatable() {
+        datatable = $('.datatable').DataTable({
+            "dom": '<"toolbar">frtip',
+            "searching": false,
+            "processing": false,
+            "serverSide": true,
+            "select": true,
+            "ordering": true,
+            "language": {
+                "url": "${base}/assets/plugins/datatables/${lang}.json"
+            },
+            "preDrawCallback": function () {
+                sublime.showLoadingbar($(".main-content"));
+            },
+            "drawCallback": function () {
+                sublime.closeLoadingbar($(".main-content"));
+            },
+            "ajax": {
+                "url": "${base}/platform/ins/instrument/data",
+                "type": "post",
+                "data": function (d) {
+                    d.insnum = $("#insnum").val();
+                    d.insname = $("#insname").val();
+                    d.number=$("#number").val();
+                    d.pstatus = $("#pstatus").val();
+                    d.linePstatus=$("#linePstatus").val();
+                    d.cabinetId = $("#cabinetId").val();
+                    d.spaceId = $("#spaceId").val();
+                }
+            },
+            "order": [[0, "desc"]],
+            "columns": [
+                {
+                    "data": "insnum", "bSortable": true, "render": function (data, type, row) {
+                        return data ? data : "";
+                    }
+                },
+                {
+                    "data": "insname", "bSortable": true, "render": function (data, type, row) {
+                        return data ? data : "";
+                    }
+                },
+                {
+                    "data": "insmodel", "bSortable": true, "render": function (data, type, row) {
+                        return data ? data : "";
+                    }
+                },
+                {
+                    "data": "pstatus", "bSortable": true, "render": function (data, type, row) {
+                        return getInsStatus(data);
+                    }
+                },
+                {
+                    "data": "linepstatus", "bSortable": true, "render": function (data, type, row) {
+                        return getInsLineStatus(data);
+                    }
+                },
+                {
+                    "data": "rfnumber", "bSortable": true, "render": function (data, type, row) {
+                        return data ? data : "";
+                    }
+                },
+                {
+                    "data": "spacename", "bSortable": true, "render": function (data, type, row) {
+                        return data ? data : "";
+                    }
+                },
+                {
+                    "data": "cabinetname", "bSortable": true, "render": function (data, type, row) {
+                        return data ? data : "";
+                    }
+                },
+               /* {
+                    "data": "insSpace.spacename", "bSortable": false, "render": function (data, type, row) {
+                        return data ? data : "";
+                    }
+                },*/
+            ],
+            "columnDefs": [
+                {
+                    "render": function (data, type, row) {
+                        return '<div class="btn-group"><button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">' +
+                            ' <i class="ti-settings"></i> <span class="ti-angle-down"></span></button><ul class="dropdown-menu" role="menu">' +
+                            '<li><a href="${base}/platform/ins/instrument/detail/' + row.id + '" data-toggle="modal" data-target="#dialogDetail">${msg["globals.button.detail"]}</a></li>' +
+                            (row.linepstatus == 0 ? '<li><a href="${base}/platform/ins/instrument/edit/' + row.id + '" data-pjax>${msg["globals.button.update"]}</a></li>':"")
+                             +
+                            '<li class="divider"></li>' +
+                            '<li><a href="${base}/platform/ins/instrument/getRFID/' + row.id + '" data-toggle="modal" data-target="#rfidDetail">分配射频标签</a></li>' +
+                            '<li class="divider"></li>' +
+                           /* '<li><a> href="${base}/platform/ins/instrument/unbindRFID/' + row.id + '" data-toggle="modal" data-target="#rfidDetail">解绑射频标签</a></li>' +*/
+                            '<li class="divider"></li>' +
+                            '<li><a href="javascript:;" onclick="del(\'' + row.id + '\')">${msg["globals.button.delete"]}</a></li>' +
+                            '</ul></div>';
+                    },
+                    "targets": 8
+                }
+            ]
+        });
+        datatable.on('click', 'tr', function () {
+            $(this).toggleClass('selected');
+        });
+        $("#searchBtn").on('click', function () {
+            datatable.ajax.reload();
+        });
+    }
+
+    function del(id) {
+        var dialog = $("#dialogDelete");
+        dialog.modal("show");
+        dialog.find("#okDel").unbind("click");
+        dialog.find("#okDel").bind("click", function (event) {
+            var btn = $(this);
+            btn.button("loading");
+            $.post("${base}/platform/ins/instrument/delete/" + id, {}, function (data) {
+                if (data.code == 0) {
+                    datatable.ajax.reload(null, false);
+                } else {
+                    Toast.error(data.msg);
+                }
+                btn.button("reset");
+                dialog.modal("hide");
+            }, "json");
+        });
+    }
+    $("#cabinetId").change(function () {
+        $.get("${base!}/platform/ins/space/getSpaceList",{cabinetId:$("#cabinetId").val()},function (data) {
+            $("#spaceId").html("")
+            $("#spaceId").append("<option value=''>请选择</option>");
+            data.forEach(function (data) {
+                $("#spaceId").append("<option value='"+data.id+"'>"+data.spacename+"</option>");
+            })
+        });
+    });
+    function delCheck() {
+        var chks = datatable.rows('.selected').data();
+        if (chks.length > 0) {
+            var ids = [];
+            $.each(chks, function (i, n) {
+                ids.push(n.id);
+            });
+            var dialog = $("#dialogDelete");
+            dialog.modal("show");
+            dialog.find("#okDel").unbind("click");
+            dialog.find("#okDel").bind("click", function (event) {
+                var btn = $(this);
+                btn.button("loading");
+                $.post("${base}/platform/ins/instrument/delete", {ids: ids.toString()}, function (data) {
+                    if (data.code == 0) {
+                        datatable.ajax.reload(null, false);
+                    } else {
+                        Toast.error(data.msg);
+                    }
+                    btn.button("reset");
+                    dialog.modal("hide");
+                }, "json");
+            });
+        } else {
+            Toast.warning("${msg['globals.button.delete.select']}");
+        }
+    }
+
+    $(function () {
+        select_spacetable();
+        initDatatable();
+        $("#dialogDetail").on("hidden.bs.modal", function () {
+            $(this).removeData("bs.modal");
+        });
+        $("#rfidDetail").on("hidden.bs.modal", function () {
+            $(this).removeData("bs.modal");
+        });
+    });
+
+    $("#setSpace").on("click", function () {
+        if (datatable.rows('.selected').data().length == 0) {
+            Toast.warning("请选择至少一条数据")
+            return false;
+        }
+    });
+    $("#resetBtn").click(function () {
+        $("#insnum").val("");
+        $("#insname").val("");
+        $("#number").val("");
+        $("#pstatus").val("");
+        $("#linePstatus").val("");
+        $("#cabinetId").val("");
+        $("#spaceId").val("");
+        $("#spaceId").html("<option value=''>请先选择智能柜</option>");
+        datatable.ajax.reload();
+    });
+    //分配仓位
+    function mSubmit() {
+        var spaces = spacetable.rows('.selected').data();
+        var spaceid = [];
+        if (spaces.length > 1) {
+            Toast.warning("只能选择一条");
+        } else if (spaces.length == 0) {
+            Toast.warning("请选择一条数据");
+        } else {
+            $.each(spaces.rows('.selected').data(), function (i, n) {
+                spaceid.push(n.id);
+            });
+        }
+
+        var ids = [];
+        var chks = datatable.rows('.selected').data();
+        if (chks.length == 0) {
+            Toast.warning("请选择一条数据");
+        } else {
+            $.each(chks, function (i, n) {
+                ids.push(n.id);
+            });
+        }
+        $.post("${base}/platform/ins/instrument/bindSpace", {
+            insIds: ids.toString(),
+            spaceid: spaceid[0].toString()
+        }, function (data) {
+            if (data.code == 0) {
+                Toast.success(data.msg);
+                datatable.ajax.reload();
+                spacetable.ajax.reload();
+            } else {
+                Toast.error(data.msg);
+            }
+            $("#spaceModal").modal("hide");
+        }, "json");
+    }
+
+    //上传图片
+    $("#uploadIns").click(function () {
+        var rowData = datatable.rows('.selected').data();
+        if (!rowData || rowData.length != 1) {
+            Toast.warning("请先选择一条工具数据")
+            return false;
+        }
+        $("#insId").val(rowData[0].id);
+        console.debug($("#insId").val())
+        $("#uploadForm input[name='uploads']").trigger("click");
+
+    });
+
+    //工具上线
+    $("#onLineIns").click(function () {
+        var ids = [];
+        var rowData = datatable.rows(".selected").data();
+        if (rowData.length == 0) {
+            Toast.warning("请至少选择一条数据");
+            return false;
+        } else {
+            $.each(rowData, function (i, n) {
+                ids.push(n.id);
+            });
+        }
+        $.post("${base}/platform/ins/instrument/onLineIns", {
+            insIds: ids.toString(),
+        }, function (data) {
+            if(data.code == 0){
+                Toast.success("上线成功")
+                datatable.ajax.reload();
+            }else if (data.code == 2){
+                Toast.warning(data.msg)
+            }else{
+                Toast.error(data.msg)
+            }
+        }, "json");
+    });
+    $("#unbindRFID").click(function () {
+        var ids = [];
+        var rowData = datatable.rows(".selected").data();
+        if (rowData.length == 0) {
+            Toast.warning("请至少选择一条数据");
+            return false;
+        } else {
+            $.each(rowData, function (i, n) {
+                ids.push(n.id);
+            });
+        }
+        $.post("${base}/platform/ins/instrument/unbindRFIDs", {
+            insIds: ids.toString(),
+        }, function (data) {
+            if(data.code == 0){
+                Toast.success("解绑成功")
+                datatable.ajax.reload();
+            }else if (data.code == 2){
+                Toast.warning(data.msg)
+            }else{
+                Toast.error(data.msg)
+            }
+        }, "json");
+    });
+
+    //工具下线
+    $("#offLineIns").click(function () {
+        var ids = [];
+        var rowData = datatable.rows(".selected").data();
+        if (rowData.length == 0) {
+            Toast.warning("请至少选择一条数据进行下线");
+            return false;
+        } else {
+            $.each(rowData, function (i, n) {
+                ids.push(n.id);
+            });
+        }
+        swal("确定下线工具吗？", "下线后,工具便不能正常借用", {
+            icon: "warning",		 //"warning" "error" "success" "info"
+            buttons: true,
+            dangerMode: true,
+        }).then((willDelete)=>{
+            if(willDelete) {
+                var btn = $(this);
+                $.post("${base}/platform/ins/instrument/offLineIns", {
+                    insIds: ids.toString(),
+                }, function (data) {
+                    if(data.code == 0){
+                        Toast.success("下线成功")
+                        datatable.ajax.reload();
+                    }else if (data.code == 2){
+                        Toast.warning(data.msg)
+                    }else{
+                        Toast.error(data.msg)
+                    }
+                }, "json");
+            } else {
+                throw null;
+    }
+    }).catch(err => {
+            if (err) {
+                swal("Oh noes!", "The AJAX request failed!", "error");
+            } else {
+                swal.stopLoading();
+        swal.close();
+    }
+    });
+    });
+
+    function uploadImg(formId) {
+        console.debug($("#insId").val())
+        $("#" + formId).ajaxUpload({
+            url: "${base}/platform/ins/instrument/uploadIns",
+            dataType: "json",
+            success: function (data, status, xhr) {
+                if (data.result = "上传成功") {
+                    Toast.success("上传成功");
+                } else {
+                    Toast.warning("请上传2M以内jpg,jpeg,png格式的图片");
+                }
+            },
+            error: function (a, b, c) {
+                Toast.error("服务器繁忙，请重试!");
+            }
+
+        });
+    }
+</script>
+<%}%>

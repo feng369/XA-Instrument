@@ -1,0 +1,207 @@
+<%
+layout("/layouts/platform.html"){
+%>
+<header class="header navbar bg-white shadow">
+    <div class="btn-group tool-button">
+        <a class="btn btn-primary navbar-btn" href="${base}/platform/ins/instrument" id="goBack" data-pjax><i
+                class="ti-angle-left"></i>${msg['globals.button.back']}</a>
+    </div>
+</header>
+
+<div class="content-wrap">
+    <div class="wrapper" style="min-height:500px;">
+        <section class="panel panel-form">
+            <form id="addForm" role="form" class="form-horizontal parsley-form" data-parsley-validate
+                  action="${base}/platform/ins/instrument/addDo" method="post">
+                <div class="row mb10">
+                    <div class="col-lg-12">
+                       <!-- <div class="form-group">
+                            <label for="insnum"
+                                   class="col-sm-2 control-label">${msg['ins.instrument.column.insnum']}</label>
+                            <div class="col-sm-8">
+                                <input type="text" id="insnum" class="form-control" name="insnum"
+                                       data-parsley-required="true"
+                                       placeholder="${msg['ins.instrument.column.insnum']}">
+                            </div>
+                        </div>-->
+
+                    <!--
+                    <div class="form-group">
+                        <label for="toolPic"
+                               class="col-sm-2 control-label">${msg['ins.instrument.column.toolPic']}</label>
+                        <div class="col-sm-8">
+                            <input type="text" id="toolPic" class="form-control" name="toolPic"
+                                   data-parsley-required="true" placeholder="${msg['ins.instrument.column.toolPic']}">
+                        </div>
+                    </div>
+                    -->
+
+                    <div class="form-group">
+                        <label for="pstatus" class="col-sm-2 control-label">${msg['ins.instrument.column.pstatus']}</label>
+                        <div class="col-sm-8">
+                            <select id="pstatus" name="pstatus" class="form-control" data-parsley-required="true">
+                                <option value="">请选择</option>
+                                <option value="0" selected>未借用</option>
+                                <!--<option value="1">待借用</option>-->
+                                <option value="2">借用中</option>
+                                <!--<option value="3">已归还</option>-->
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group has-feedback">
+                        <label for="baseInsName" class="col-sm-2 control-label">基础工具</label>
+                        <div class="col-sm-8">
+                            <div class="input-group">
+                                <input id="baseInsName" type="text" class="form-control" placeholder="选择基础工具" disabled
+                                       value="" data-parsley-required="true"/>
+
+                                <span class="input-group-btn">
+			                             				<a class="btn btn-primary"
+                                                           href="${base}/platform/ins/baseins/selectBaseIns"
+                                                           data-target="#dialogSelectBaseIns" data-toggle="modal"><i
+                                                                class="ti-plus"></i>选择
+                                                    </a>
+			                             		</span>
+                            </div>
+                            <input type="hidden" id="baseInsId" name="baseInsId" value="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="describ"
+                               class="col-sm-2 control-label">${msg['ins.instrument.column.describ']}</label>
+                        <div class="col-sm-8">
+                            <input type="text" id="describ" class="form-control" name="describ"
+                                   placeholder="${msg['ins.instrument.column.describ']}">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6">
+                    <div class="form-group text-center">
+                        <label></label>
+                        <div>
+                            <button class="btn btn-primary btn-block btn-lg btn-parsley"
+                                    data-loading-text="${msg['globals.button.submit.tip']}">
+                                ${msg['globals.button.submit']}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+    </div>
+    </form>
+    </section>
+</div>
+</div>
+<div id="dialogSelectBaseIns" class="modal fade bs-modal-sm" tabindex="-4" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" style="width: 700px;">
+        <div class="modal-content" style="width: 700px;">
+        </div>
+    </div>
+</div>
+<div id="dialogSelectInsType" class="modal fade bs-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">选择上级类型</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div id="jsTreeInsType" class="demo"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取 消</button>
+                <button type="button" class="btn btn-primary" onclick="selectInsTypeMenu()">确认选择</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script language="JavaScript">
+
+    function initTreeView() {
+        $("#jsTreeUnit").jstree({
+            plugins: ["wholerow", "json_data"],
+            core: {
+                data: {
+                    dataType: "json",
+                    url: function (node) {
+                        return node.id === "#" ? "${base}/platform/sys/unit/tree" : "${base}/platform/sys/unit/tree?pid=" + node.id
+                    }
+                },
+                multiple: false
+            }
+        }).on("dblclick.jstree", function (node) {
+            selectUnitMenu();
+        });
+
+        $("#jsTreeInsType").jstree({
+            plugins: ["wholerow", "json_data"],
+            core: {
+                data: {
+                    dataType: "json",
+                    url: function (node) {
+                        return node.id === "#" ? "${base}/platform/sys/dict/tree?pid=bc28d072c85c4138a462868d8059258e" : "${base}/platform/sys/dict/tree?pid=" + node.id
+                    }
+                },
+                multiple: false
+            }
+        }).on("dblclick.jstree", function (node) {
+            selectInsTypeMenu();
+        });
+    }
+
+    //选择组织
+    function selectUnitMenu() {
+        var tree = $.jstree.reference("#jsTreeUnit");
+        var node = tree.get_selected(true);
+        $("#addForm #insunitName").val(node[0].text);
+        $("#addForm #insunit").val(node[0].id);
+        $("#dialogSelectUnit").modal("hide");
+    }
+
+    //选择工具类型
+    function selectInsTypeMenu() {
+        var tree = $.jstree.reference("#jsTreeInsType");
+        var node = tree.get_selected(true);
+        $("#addForm #instypeName").val(node[0].text);
+        $("#addForm #instype").val(node[0].id);
+        $("#dialogSelectInsType").modal("hide");
+    }
+
+    $(document).ready(function () {
+        initTreeView();
+        $('#addForm').ajaxForm({
+            dataType: 'json',
+            beforeSubmit: function (arr, form, options) {
+                form.find("button:submit").button("loading");
+            },
+            success: function (data, statusText, xhr, form) {
+                if (data.code == 0) {
+                    Toast.success(data.msg);
+                    form.resetForm();
+                } else {
+                    Toast.error(data.msg);
+                }
+                form.find("button:submit").button("reset");
+            }
+        });
+    });
+    var baseInsObj = null;
+    $("#dialogSelectBaseIns").on("hidden.bs.modal", function () {
+        $("#baseInsName").val(baseInsObj[0].insname);
+        $("#baseInsId").val(baseInsObj[0].id);
+        $('#dialogSelectBaseIns').modal('hide');
+        $(this).removeData("bs.modal");
+    });
+</script>
+<%}%>
+
+

@@ -1,0 +1,273 @@
+<%
+layout("/layouts/platform.html"){
+%>
+<section class="content-wrap bg-white">
+    <header class="header navbar bg-white shadow">
+        <div class="btn-group" style="top: 10px">
+            <select id="completeValue" name="completeValue" class="optionSelect">
+                <option value='0'>申请</option>
+                <option value='1'>维修中</option>
+                <option value='2'>正常</option>
+            </select>
+        </div>
+        <div class="btn-group tool-button" style="top: 5px">
+            <button class="btn btn-primary navbar-btn" onclick="completeRepair()"><i class="ti-check"></i> 维修完成</button>
+            <% if(@shiro.hasPermission('platform.eq.repair.complete')){ %>
+
+            <%}%>
+        </div>
+    </header>
+    <div class=panel-body style="padding-top: 50px;">
+        <div class="table-responsive no-border">
+            <table class="table table-bordered table-striped mg-t datatable">
+                <thead>
+                <tr>
+                    <th>订单编码</th>
+                    <th>工具编号</th>
+                    <th>工具名称</th>
+                    <!--<th>${msg['ins.repair.column.imgPath']}</th>-->
+                    <!--<th>${msg['ins.repair.column.imgName']}</th>-->
+                    <!--<th>${msg['ins.repair.column.repairType']}</th>-->
+                    <th>${msg['ins.repair.column.personId']}</th>
+                    <th>${msg['ins.repair.column.inTime']}</th>
+                    <th>${msg['ins.repair.column.describ']}</th>
+                    <th>维修状态</th>
+                    <th>${msg['globals.table.column.operation']}</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</section>
+<div id="dialogDelete" class="modal fade bs-modal-sm" tabindex="-2" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">${msg['globals.button.delete']}</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        ${msg['globals.button.delete.notice']}
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">${msg['globals.button.cancel']}
+                </button>
+                <button id="okDel" type="button" class="btn btn-primary"
+                        data-loading-text="${msg['globals.button.delete.tip']}">${msg['globals.button.confirm']}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="dialogDetail" class="modal fade bs-modal-sm" tabindex="-3" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+<script language="JavaScript">
+    var datatable;
+    function initDatatable() {
+        datatable = $('.datatable').DataTable({
+            "dom": '<"toolbar">frtip',
+            "searching": false,
+            "processing": false,
+            "serverSide": true,
+            "select": true,
+            "ordering": true,
+            "language": {
+                "url": "${base}/assets/plugins/datatables/${lang}.json"
+            },
+            "preDrawCallback": function () {
+                sublime.showLoadingbar($(".main-content"));
+            },
+            "drawCallback": function () {
+                sublime.closeLoadingbar($(".main-content"));
+            },
+            "ajax": {
+                "url": "${base}/platform/ins/repair/data",
+                "type": "post",
+                "data": function (d) {
+                    d.completeValue = $("#completeValue option:selected").val()
+                }
+            },
+            "order": [[0, "desc"]],
+            "columns": [
+                {
+                    "data": "ordernum", "bSortable": true,
+                    "render": function (data, type, row) {
+                        return data ? data : "";
+                    }
+                },
+                {
+                    "data": "insnum", "bSortable": true, "render": function (data, type, row) {
+                        return data ? data : "";
+                    }
+                },
+                {
+                    "data": "insname.", "bSortable": true, "render": function (data, type, row) {
+                        return data ? data : "";
+                    }
+                },
+                // {"data": "orderentryId", "bSortable": true},
+                {
+                    "data": "personname","bSortable": true, "render": function (data, type, row) {
+                        return data ? data : "";
+                    }
+                 },
+                {
+                    "data": "intime", "bSortable": true, "render": function (data, type, row) {
+                        return data ? data : "";
+                }},
+                // {"data": "imgPath", "bSortable": true},
+                // {"data": "imgName", "bSortable": true},
+                // {"data": "repairType", "bSortable": true},
+                {"data": "describ", "bSortable": true, "render": function (data, type, row) {
+                    return data ? data : "";
+                }},
+                {"data": "pstatus", "bSortable": true, "render": function (data, type, row) {
+                    // console.debug(data)
+                        return getRepairStatus(data);
+                    }},
+            ],
+            "columnDefs": [
+                {
+                    "render": function (data, type, row) {
+                        return '<div class="btn-group"><button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">' +
+                            ' <i class="ti-settings"></i><span class="ti-angle-down"></span></button><ul class="dropdown-menu" role="menu">' +
+                            // '<li><a href="${base}/platform/ins/repairtrack/trackRecord/' + row.id + '" data-pjax>跟踪记录</a></li>' +
+                            '<li class="divider"></li>' +
+                            '<li><a href="${base}/platform/ins/repair/detail/' + row.id + '" data-toggle="modal" data-target="#dialogDetail">${msg["globals.button.detail"]}</a></li>' +
+                            (row.pstatus == 0?
+                            '<li><a href="${base}/platform/ins/repair/edit/' + row.id + '" data-pjax>${msg["globals.button.update"]}</a></li>'
+                                :"")+
+                            '<li class="divider"></li>' +
+                            '<li><a href="javascript:;" onclick="del(\'' + row.id + '\')">${msg["globals.button.delete"]}</a></li>' +
+                            '</ul></div>';
+                    },
+                    "targets": 7
+                }
+            ]
+        });
+        datatable.on('click', 'tr', function () {
+            $(this).toggleClass('selected');
+        });
+        $("#searchBtn").on('click', function () {
+            datatable.ajax.reload();
+        });
+    }
+
+    function del(id) {
+        var dialog = $("#dialogDelete");
+        dialog.modal("show");
+        dialog.find("#okDel").unbind("click");
+        dialog.find("#okDel").bind("click", function (event) {
+            var btn = $(this);
+            btn.button("loading");
+            $.post("${base}/platform/ins/repair/delete/" + id, {}, function (data) {
+                if (data.code == 0) {
+                    datatable.ajax.reload(null, false);
+                } else {
+                    Toast.error(data.msg);
+                }
+                btn.button("reset");
+                dialog.modal("hide");
+            }, "json");
+        });
+    }
+    $("#completeValue").change(function () {
+        datatable.ajax.reload(null, false);
+    });
+    function delCheck() {
+        var chks = datatable.rows('.selected').data();
+        if (chks.length > 0) {
+            var ids = [];
+            $.each(datatable.rows('.selected').data(), function (i, n) {
+                ids.push(n.id);
+            });
+            var dialog = $("#dialogDelete");
+            dialog.modal("show");
+            dialog.find("#okDel").unbind("click");
+            dialog.find("#okDel").bind("click", function (event) {
+                var btn = $(this);
+                btn.button("loading");
+                $.post("${base}/platform/ins/repair/delete", {ids: ids.toString()}, function (data) {
+                    if (data.code == 0) {
+                        datatable.ajax.reload(null, false);
+                    } else {
+                        Toast.error(data.msg);
+                    }
+                    btn.button("reset");
+                    dialog.modal("hide");
+                }, "json");
+            });
+        } else {
+            Toast.warning("${msg['globals.button.delete.select']}");
+        }
+    }
+    $(function () {
+        initDatatable();
+        $("#dialogDetail").on("hidden.bs.modal", function () {
+            $(this).removeData("bs.modal");
+        });
+    });
+    //维修申报状态
+    function getRepairStatus(pstatus){
+        if(pstatus == 0){
+            return "申请";
+        }else if(pstatus ==1){
+            return "维修中";
+        }else if(pstatus ==2){
+            return "正常";
+        }else{
+            return "";
+        }
+    }
+    
+    function completeRepair() {
+        var chks = datatable.rows('.selected').data();
+        if (chks.length == 0) {
+            Toast.warning("请选择至少一条数据");
+            return;
+        }
+        var ids = [];
+        $.each(datatable.rows('.selected').data(), function (i, n){
+            ids.push(n.id);
+        });
+        swal("", "确定维修完成吗？", {
+            icon: "warning",		 //"warning" "error" "success" "info"
+            buttons: true,
+            dangerMode: true,
+        }).then((willDelete)=>{
+            if(willDelete) {
+                $.post("${base}/platform/ins/repair/completeRepair", {ids: ids.toString()}, function (data) {
+                    if (data.code == 0){
+                        Toast.success(data.msg);
+                        datatable.ajax.reload(null, false);
+                    } else {
+                        Toast.error(data.msg);
+                    }
+                }, "json");
+                //swal("Deleted!", "操作成功", "success");
+            } else {
+                // swal("你已取消该操作!", {
+                //     icon: "info",
+                // });
+                //swal("Cancelled", "你已取消该操作!", "info");
+                throw null;
+    }
+    }).catch(err => {
+            if (err) {
+                swal("Oh noes!", "The AJAX request failed!", "error");
+            } else {
+                swal.stopLoading();
+        swal.close();
+    }
+    });
+    }
+</script>
+<%}%>

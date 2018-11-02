@@ -1,0 +1,105 @@
+<section class="content-wrap bg-white">
+    <header class="header navbar bg-white shadow">
+        <div class="pull-left offscreen-left" style="padding-top:15px;">
+            <div class="form-group">
+                <input id="lockNumber" type="text" onclick="this.value='';" placeholder="请输入锁编号">
+            </div>
+        </div>
+        <div class="pull-right offscreen-right btn-group tool-button">
+            <a class="btn btn-primary navbar-btn" onclick="_selectOn()">确定</a>
+        </div>
+    </header>
+    <div class=panel-body style="padding-top: 50px;">
+        <div class="table-responsive no-border" style="padding-top: 5px;" >
+            <table id="datatable_select_lock" class="table table-bordered table-striped mg-t datatable">
+                <thead>
+                <tr>
+                    <th>锁编号</th>
+                    <th>所属机场</th>
+                    <th>状态</th>
+                    <th>绑定状态</th>
+                <tr/>
+                </thead>
+            </table>
+    </div>
+    </div>
+</section>
+<script language="JavaScript">
+    var datatable_select_lock;
+    function initdatatable_select_lock() {
+        datatable_select_lock = $('#datatable_select_lock').DataTable({
+            "dom": '<"toolbar">frtip',
+            "searching":false,
+            "processing": false,
+            "serverSide": true,
+            "select": true,
+            "ordering": true,
+            "language": {
+                "url": "${base}/assets/plugins/datatables/cn.json"
+            },
+            "ajax": {
+                "url": "${base}/platform/ins/lock/data",
+                "type": "post",
+                "data": function (d) {
+                    d.locknum = $("#lockNumber").val();
+                    //只显示未绑定的智能锁
+                    d.bindStatus = "0";
+                }
+            },
+            "order": [[0, "desc"]],
+            "columns": [
+                {"data": "locknum", "bSortable": true},
+                {"data": "airportId", "bSortable": true,"render": function (data, type, row) {
+                    return row.baseAirport ? row.baseAirport.airportname : "";
+                }},
+                {"data": "pstatus", "bSortable": true,"render": function (data, type, row) {
+                        return getLockStatus(data);}
+                },
+                {"data": "bindStatus", "bSortable": true,"render": function (data, type, row) {
+                        return getBindStatus(data);
+                    }
+                },
+            ],
+            "columnDefs": [
+                {
+
+                }
+            ]
+        });
+        datatable_select_lock.on('click', 'tr', function () {
+            $(this).toggleClass('selected');
+        });
+        $("#lockNumber").on('keyup', function () {
+            datatable_select_lock.ajax.reload();
+        });
+    }
+           function _selectAll(){
+        $("#datatable_select_lock").find("tr").each(function () {
+            if (!$(this).hasClass('selected'))
+                $(this).addClass('selected');
+        });
+    }
+    function _selectOn(){
+        var chks = datatable_select_lock.rows('.selected').data();
+        if (chks.length > 0) {
+            var url="${base}/platform/ins/space/updateLock";
+            $.post(url,{"spaceId":spaceId,"lockId":chks[0].id},function(data){
+                if (data.code == 0) {
+                    Toast.success("智能锁分配完成");
+                    datatable.ajax.reload();
+                    $('#lockDetail').modal('hide');
+                }else {
+                    Toast.error(data.msg);
+                }
+            });
+        }else{
+            Toast.warning("请先选择智能锁!");
+        }
+    }
+
+    var spaceId = "${spaceId}"
+    $(document).ready(function () {
+        initdatatable_select_lock();
+    });
+
+</script>

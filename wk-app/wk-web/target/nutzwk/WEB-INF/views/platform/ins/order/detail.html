@@ -1,0 +1,71 @@
+<div class="modal-body no-p">
+    <div class="row">
+        <div class="col-xs-12">
+            <section class="panel no-b" >
+                <header class="panel-heading clearfix brtl brtr">
+                    <div class="overflow-hidden">
+                        <!--<a href="javascript:;" class="h4 show no-m pt5">订单表</a>-->
+                        <small>订单明细</small>
+
+                    </div>
+                </header>
+                <div class="list-group" id="orderInfo" style="">
+                    <%
+                    for(ele in obj ){
+                    %>
+                    <table class="table table-bordered table-striped mg-t datatable">
+                       <tbody>
+                        <tr >
+                            <td colspan="2" style="background-color:<%if(ele.entryStatus==1){%> #FFFF00<%}else if(ele.entryStatus==2){%>#00F5FF<%}else{%>#00FF00<%}%> ">
+                                <%if(ele.entryStatus==1){%>待借用<%}else if(ele.entryStatus==2){%>借用中<%}else{%>已归还<%}%>
+                            </td>
+                        </tr>
+                                                                 <tr>
+                                   <td>工具名称</td><td>${ele.insname!}</td>
+                                            </tr>
+                                                                  <tr>
+                                                <td>工具型号</td><td>${ele.insmodel!}</td>
+                                            </tr>
+                                                                    <tr>
+                                                <td>工具图片</td><td><div class="col-sm-8"><img src="${ele.toolPic!}" class='img-rounded' data-action='zoom' style='max-height: 100px' >&nbsp;&nbsp;
+
+                                                                    </div></td>
+                                            </tr>
+                                                                    <!--<tr>-->
+                                                <!--<td>工具借用状态</td><td>-->
+                                                                        <!--<%if(ele.toolStstus==0 || ele.toolStstus == -1){%>未借用<%}else{%>借用中<%}%>-->
+
+                                                                    <!--</td>-->
+                                            <!--</tr>-->
+                                                               </tbody>
+                                    </table>
+
+                    <%}%>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">${msg['globals.button.ok']}</button>
+</div>
+<script type="application/javascript">
+    /*
+    if(pstatus === "0"){
+       $("#myPstatus").html("未完成");
+    }else if(pstatus === "1"){
+        $("#myPstatus").html("已完成");
+    }else{
+        $("#myPstatus").html("");
+    }
+    */
+    // var data = new Array();
+    // var str = "${obj}";
+    $(function () {
+        var str = "${obj}";
+        console.debug(str)
+        /*data.forEach(function (data) {
+            $("#orderInfo").append("");
+        })*/
+    });
+</script>

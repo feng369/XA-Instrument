@@ -1,0 +1,149 @@
+<%
+layout("/layouts/platform.html"){
+%>
+<header class="header navbar bg-white shadow">
+    <div class="btn-group tool-button">
+        <a class="btn btn-primary navbar-btn" href="${base}/platform/ins/repair" id="goBack" data-pjax><i class="ti-angle-left"></i>${msg['globals.button.back']}</a>
+    </div>
+</header>
+
+<div class="content-wrap">
+    <div class="wrapper" style="min-height:500px;">
+        <section class="panel panel-form">
+            <form id="editForm" role="form" class="form-horizontal parsley-form" data-parsley-validate
+                  action="${base}/platform/ins/repair/editDo" method="post">
+                <input name="id" type="hidden" value="${obj.id}">
+                <div class="row mb10">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label for="orderId" class="col-sm-2 control-label">${msg['ins.repair.column.orderId']}</label>
+                            <div class="col-sm-8">
+                                <input type="text" id="orderId" class="form-control"  data-parsley-required="true"  placeholder="${msg['ins.repair.column.orderId']}" value="${obj.order.ordernum!}" disabled>
+                                <input type="text"  class="form-control" name="orderId" data-parsley-required="true"
+                                       placeholder="${msg['ins.repair.column.orderId']}" value="${obj.orderId!}" style="display: none">
+                            </div>
+                        </div>
+
+                       <!-- <div class="form-group">
+                            <label for="orderentryId" class="col-sm-2 control-label">${msg['ins.repair.column.orderentryId']}</label>
+                            <div class="col-sm-8">
+                                <input type="text" id="orderentryId" class="form-control" name="orderentryId" data-parsley-required="true"
+                                       placeholder="${msg['ins.repair.column.orderentryId']}" value="${obj.orderentryId}" >
+                            </div>
+                        </div>-->
+                        <div class="form-group">
+                            <label for="insId" class="col-sm-2 control-label">${msg['ins.repair.column.insId']}</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control"  data-parsley-required="true"
+                                       placeholder="${msg['ins.repair.column.insId']}" value="${instrument.insnum!}" disabled>
+                                <input type="text" class="form-control" name="insId" data-parsley-required="true"
+                                       placeholder="${msg['ins.repair.column.insId']}" value="${obj.insId!}" style="display: none">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="insId" class="col-sm-2 control-label">${msg['ins.repair.column.insId']}</label>
+                            <div class="col-sm-8">
+                                <input type="text" id="insId" class="form-control" data-parsley-required="true"  placeholder="${msg['ins.repair.column.insId']}" value="${baseins.insname!}" disabled>
+                            </div>
+                        </div>
+
+                      <!--  <div class="form-group">
+                            <label for="imgPath" class="col-sm-2 control-label">${msg['ins.repair.column.imgPath']}</label>
+                            <div class="col-sm-8">
+                                <input type="text" id="imgPath" class="form-control" name="imgPath" data-parsley-required="true"
+                                       placeholder="${msg['ins.repair.column.imgPath']}" value="${obj.imgPath}" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="imgName" class="col-sm-2 control-label">${msg['ins.repair.column.imgName']}</label>
+                            <div class="col-sm-8">
+                                <input type="text" id="imgName" class="form-control" name="imgName" data-parsley-required="true"
+                                       placeholder="${msg['ins.repair.column.imgName']}" value="${obj.imgName}" >
+                            </div>
+                        </div>-->
+                      <!--  <div class="form-group">
+                            <label for="repairType" class="col-sm-2 control-label">${msg['ins.repair.column.repairType']}</label>
+                            <div class="col-sm-8">
+                                <input type="text" id="repairType" class="form-control" name="repairType" data-parsley-required="true"
+                                       placeholder="${msg['ins.repair.column.repairType']}" value="${obj.repairType}" >
+                            </div>
+                        </div>-->
+                        <div class="form-group">
+                            <label for="personId" class="col-sm-2 control-label">${msg['ins.repair.column.personId']}</label>
+                            <div class="col-sm-8">
+                                <input type="text" id="personId" class="form-control"  data-parsley-required="true" placeholder="${msg['ins.repair.column.personId']}" value="${obj.basePerson.personname!}" disabled>
+                                <input type="text"  class="form-control"  data-parsley-required="true" name="personId" placeholder="${msg['ins.repair.column.personId']}" value="${obj.personId!}" style="display: none">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inTime" class="col-sm-2 control-label">${msg['ins.repair.column.inTime']}</label>
+                            <div class="col-sm-8">
+                                <input type="text" id="inTime" class="form-control" name="inTime" data-parsley-required="true"
+                                       placeholder="${msg['ins.repair.column.inTime']}" value="${obj.inTime}" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="pstatus" class="col-sm-2 control-label">${msg['ins.repair.column.pstatus']}</label>
+                            <div class="col-sm-8">
+                                <select id="pstatus" name="pstatus" class="form-control" data-parsley-required="true">
+                                    <option value="0">申请中</option>
+                                    <option value="1">维修中</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="describ" class="col-sm-2 control-label">${msg['ins.repair.column.describ']}</label>
+                            <div class="col-sm-8">
+                                <input type="text" id="describ" class="form-control" name="describ" data-parsley-required="true"
+                                       placeholder="${msg['ins.repair.column.describ']}" value="${obj.describ}" disabled>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6">
+                    <div class="form-group text-center">
+                        <label></label>
+
+                        <div>
+                            <button class="btn btn-primary btn-block btn-lg btn-parsley" data-loading-text="${msg['globals.button.submit.tip']}">${msg['globals.button.submit']}</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+    </div>
+</div>
+<script language="JavaScript">
+    var pstatusVal = "${obj.pstatus}";
+    var selectOptionVal;
+    $("#pstatus").change(function () {
+        selectOptionVal = $(this).val();
+    })
+    $(document).ready(function (){
+        $("#pstatus option[value="+pstatusVal+"]").prop("selected",true);
+        selectOptionVal = pstatusVal;
+    });
+    $('#editForm').ajaxForm({
+        dataType: 'json',
+        beforeSubmit: function (arr, form, options) {
+            if(selectOptionVal == 1){
+                return confirm("修改后状态便不能更改,确定将当前工具改为[维修中]吗?")
+            }
+            form.find("button:submit").button("loading");
+        },
+        success: function (data, statusText, xhr, form) {
+            if (data.code == 0) {
+                Toast.success(data.msg);
+                setTimeout(function () {
+                    $("#goBack").trigger("click");
+                }, 1000);
+            } else {
+                Toast.error(data.msg);
+            }
+            form.find("button:submit").button("reset");
+        }
+    });
+</script>
+<%}%>

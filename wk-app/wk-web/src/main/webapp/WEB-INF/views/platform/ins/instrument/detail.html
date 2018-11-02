@@ -1,0 +1,104 @@
+<div class="modal-body no-p">
+    <div class="row">
+        <div class="col-xs-12">
+            <section class="panel panel-primary no-b">
+                <header class="panel-heading clearfix brtl brtr">
+                    <div class="overflow-hidden">
+                        <a href="javascript:;" class="h4 show no-m pt5">工具表</a>
+                        <small>工具明细</small>
+                    </div>
+                </header>
+                <div class="list-group">
+                    <table class="table table-bordered table-striped mg-t datatable">
+                        <tbody>
+                                                        <tr>
+                                <td>${msg['ins.instrument.column.insnum']}</td><td>${obj.insBaseins.insnum!}</td>
+                            </tr>
+                                                        <tr>
+                                <td>${msg['ins.instrument.column.insname']}</td><td>${obj.insBaseins.insname!}</td>
+                            </tr>
+                                                        <tr>
+                                <td>${msg['ins.instrument.column.insparam']}</td><td>${obj.insBaseins.insparam!}</td>
+                            </tr>
+                                                        <tr>
+                                <td>${msg['ins.instrument.column.insmodel']}</td><td>${obj.insBaseins.insmodel!}</td>
+                            </tr>
+                                                        <tr>
+                                <td>${msg['ins.instrument.column.insspaceid']}</td><td>${obj.insSpace.spacename!}</td>
+                            </tr>
+                              <tr>
+                                <td>${msg['ins.instrument.column.rfid']}</td><td>${obj.insRfid.number!}</td>
+                              </tr>
+                                                        <tr>
+                                <td>${msg['ins.instrument.column.pstatus']}</td><td id="mystatus"></td>
+
+                            </tr>
+                                                        <tr>
+                                <td>上线状态</td><td id="linePstatus"></td>
+
+                            </tr>
+                                                        <tr>
+                                                            <td>${msg['ins.instrument.column.toolPic']}</td><td><div class="col-sm-8" id="toolPic">
+                                                        </div>
+                                                        </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>${msg['ins.instrument.column.describ']}</td><td>${obj.describ}</td>
+                                                        </tr>
+                                                    </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">${msg['globals.button.ok']}</button>
+</div>
+
+<script type="application/javascript">
+    var pstatus = "${obj.pstatus}";
+    var linePstatus="${obj.linePstatus}"
+    $(function(){
+        var toolPic = "${obj.toolPic!}";
+        var imgtemp = "";
+        if(typeof(toolPic) != "undefined" && toolPic != ""){
+            var imgs = toolPic.split(",");
+            imgs.forEach(function(data){
+                imgtemp = imgtemp + "<img src='"+data+"' class='img-rounded' data-action='zoom' style='max-height: 100px'>&nbsp;&nbsp;"
+            })
+            $("#toolPic").html(imgtemp);
+
+        }
+
+        if(pstatus == "0"){
+            $("#mystatus").html("未借用")
+        }else if(pstatus == "1"){
+            $("#mystatus").html("待借用")
+        }else if (pstatus == "2"){
+            $("#mystatus").html("借用中")
+        }else{
+            $("#mystatus").html("")
+        }
+
+        if(linePstatus == "0"){
+            $("#linePstatus").html("下线")
+        }else if(linePstatus == "1"){
+            $("#linePstatus").html("上线")
+        }else{
+            $("#linePstatus").html("")
+        }
+        /*if(pstatus == "0"){
+            $("#mystatus").html("未借用")
+        }else if(pstatus == "1"){
+            $("#mystatus").html("待借用")
+        }else if (pstatus == "2"){
+            $("#mystatus").html("借用中")
+        }else if(pstatus == "3"){
+            $("#mystatus").html("已归还")
+        }else{
+            $("#mystatus").html("")
+        }*/
+    });
+
+</script>

@@ -1,0 +1,53 @@
+<div class="modal-body no-p">
+    <div class="row">
+        <div class="col-xs-12">
+            <section class="panel panel-primary no-b">
+                <header class="panel-heading clearfix brtl brtr">
+                    <div class="overflow-hidden">
+                        <a href="javascript:;" class="h4 show no-m pt5">订单工具表</a>
+                        <small>${obj.id}</small>
+                    </div>
+                </header>
+                <div class="list-group">
+                    <table class="table table-bordered table-striped mg-t datatable">
+                        <tbody>
+                                                        <tr>
+                                <td>${msg['ins.orderentry.column.insId']}</td><td>${obj.insId}</td>
+                            </tr>
+                                                        <tr>
+                                <td>${msg['ins.orderentry.column.itype']}</td><td>${obj.itype}</td>
+                            </tr>
+                                                        <tr>
+                                <td>${msg['ins.orderentry.column.orderid']}</td><td>${obj.orderid}</td>
+                            </tr>
+                                                        <tr>
+                                <td>${msg['ins.orderentry.column.number']}</td><td>${obj.number}</td>
+                            </tr>
+                                                        <tr>
+                                <td>${msg['ins.orderentry.column.pstatus']}</td><td>${obj.pstatus}</td>
+                            </tr>
+                                                        <tr>
+                                <td>${msg['ins.orderentry.column.outorder']}</td><td>${obj.outorder}</td>
+                            </tr>
+                                                        <tr>
+                                <td>${msg['ins.orderentry.column.outnumber']}</td><td>${obj.outnumber}</td>
+                            </tr>
+                                                        <tr>
+                                <td>${msg['ins.orderentry.column.operator']}</td><td>${obj.operator}</td>
+                            </tr>
+                                                        <tr>
+                                <td>${msg['ins.orderentry.column.operatetime']}</td><td>${obj.operatetime}</td>
+                            </tr>
+                                                        <tr>
+                                <td>${msg['ins.orderentry.column.starttime']}</td><td>${obj.starttime}</td>
+                            </tr>
+                                                    </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">${msg['globals.button.ok']}</button>
+</div>

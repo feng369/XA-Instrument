@@ -1,0 +1,216 @@
+<%
+layout("/layouts/platform.html"){
+%>
+<header class="header navbar bg-white shadow">
+    <div class="btn-group tool-button">
+        <a class="btn btn-primary navbar-btn" href="${base}/platform/ins/cabinet" id="goBack" data-pjax><i class="ti-angle-left"></i>${msg['globals.button.back']}</a>
+    </div>
+</header>
+
+<div class="content-wrap">
+    <div class="wrapper" style="min-height:500px;">
+        <section class="panel panel-form">
+            <form id="addForm" role="form" class="form-horizontal parsley-form" data-parsley-validate
+                  action="${base}/platform/ins/cabinet/addDo" method="post">
+                <div class="row mb10">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label for="cabinetnum" class="col-sm-2 control-label">${msg['ins.cabinet.column.cabinetnum']}</label>
+                            <div class="col-sm-8" id="numDiv">
+                                <input type="text" id="cabinetnum" class="form-control" name="cabinetnum" data-parsley-required="true" placeholder="${msg['ins.cabinet.column.cabinetnum']}">
+                                <span style="color: red" hidden>该编码已经存在</span>
+                            </div>
+                            <img src="/assets/img/loading.gif" hidden>
+                        </div>
+                        <div class="form-group">
+                            <label for="cabinetname" class="col-sm-2 control-label">${msg['ins.cabinet.column.cabinetname']}</label>
+                            <div class="col-sm-8">
+                            <input type="text" id="cabinetname" class="form-control" name="cabinetname" data-parsley-required="true" placeholder="${msg['ins.cabinet.column.cabinetname']}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address" class="col-sm-2 control-label">${msg['ins.cabinet.column.address']}</label>
+                            <div class="col-sm-8">
+                            <input type="text" id="address" class="form-control" name="address" placeholder="${msg['ins.cabinet.column.address']}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="pstatus" class="col-sm-2 control-label">${msg['ins.cabinet.column.pstatus']}</label>
+                            <div class="col-sm-8">
+                                <select id="pstatus" name="pstatus" class="form-control" data-parsley-required="true">
+                                    <option value="">请选择</option>
+                                    <option value="0" selected>上线</option>
+                                    <option value="1">下线</option>
+                                </select>
+                            </div>
+                        </div>
+                       <!-- <div class="form-group">
+                            <label for="airportid" class="col-sm-2 control-label">${msg['ins.cabinet.column.airportid']}</label>
+                            <div class="col-sm-8">
+                            <input type="text" id="airportid" class="form-control" name="airportid" data-parsley-required="true" placeholder="${msg['ins.cabinet.column.airportid']}">
+                            </div>
+                        </div>-->
+                        <div class="form-group has-feedback">
+                            <label for="airportName" class="col-sm-2 control-label">所属机场</label>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <input id="airportName" type="text" class="form-control"  data-parsley-required="true" placeholder="选择机场" disabled
+                                           value="${session.airportname!}" />
+
+                                    <span class="input-group-btn">
+                                                    <a  class="btn btn-primary" data-toggle="modal"
+                                                        href="${base}/platform/base/airport/selectAirport"    data-target="#dialogAirportSelect"><i class="ti-plus"></i>选择
+                                                    </a>
+			                             		</span>
+                                </div>
+                                <input  data-parsley-required="true" type="hidden" id="airportid" name="airportid" value="${session.airportid!}">
+                            </div>
+                        </div>
+
+                        <div class="form-group has-feedback">
+                            <label for="cabinetType" class="col-sm-2 control-label">柜子类型</label>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <input id="cabinetType" type="text" class="form-control" placeholder="选择柜子类型" disabled
+                                           data-parsley-required="true"/>
+
+                                    <span class="input-group-btn">
+			                             			<button type="button" class="btn btn-primary" data-toggle="modal"
+                                                            data-target="#dialogSelectCabinetType"><i class="ti-plus"></i>选择
+                                                    </button>
+			                             		</span>
+                                </div>
+                                <input type="hidden" name="cabinetType" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6">
+                    <div class="form-group text-center">
+                        <label></label>
+
+                        <div>
+                            <button class="btn btn-primary btn-block btn-lg btn-parsley" data-loading-text="${msg['globals.button.submit.tip']}">${msg['globals.button.submit']}</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+<!-- 选择机场 -->
+<div id="dialogAirportSelect" class="modal fade bs-modal-sm" tabindex="-3" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" style="width: 700px;">
+        <div class="modal-content" style="width: 700px;">
+        </div>
+    </div>
+</div>
+<div id="dialogSelectCabinetType" class="modal fade bs-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">选择柜子类型</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div id="jsTreeCabinet" class="demo"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取 消</button>
+                <button type="button" class="btn btn-primary" onclick="selectCabinetType()">确认选择</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script language="JavaScript">
+    var flag = false;
+    $("#numDiv input").blur(function () {
+        var numVal = $(this).val();
+        $.ajax({
+            url:"${base}/platform/ins/cabinet/countByNum",
+            data:{num:numVal},
+            type:"POST",
+            beforeSend:function () {
+                $("#numDiv").next("img").show()
+            },
+            success:function (data) {
+                if(data > 0){
+                    flag = true;
+                    $("#numDiv").addClass("has-error");
+                    $("#numDiv span").show();
+                }else{
+                    flag = false;
+                    $("#numDiv span").hide();
+                    $("#numDiv").removeClass("has-error")
+                }
+            },
+            complete:function () {
+                $("#numDiv").next("img").hide()
+            }
+        });
+    });
+    var airportObj = null;
+    $("#dialogAirportSelect").on("hidden.bs.modal",function(){
+        console.debug(airportObj)
+        $("#airportid").val(airportObj[0].id);
+        $("#airportName").val(airportObj[0].airportname);
+        $(this).removeData("bs.modal");
+    });
+    function selectCabinetType() {
+        var tree = $.jstree.reference("#jsTreeCabinet");
+        var node = tree.get_selected(true);
+        $("#addForm #cabinetType").val(node[0].text);
+        $("#addForm input[name='cabinetType']").val(node[0].id);
+        $("#dialogSelectCabinetType").modal("hide");
+    }
+    $(document).ready(function () {
+
+        $("#jsTreeCabinet").jstree({
+            plugins: ["wholerow", "json_data"],
+            core: {
+                data: {
+                    dataType: "json",
+                    url: function (node) {
+                        return node.id === "#" ? "${base}/platform/sys/dict/tree?pid=f449df76493a4a2484df0f7225225f6d" : "${base}/platform/sys/dict/tree?pid=" + node.id
+                    }
+                },
+                multiple: false
+            }
+        }).on("dblclick.jstree", function (node) {
+            selectCabinetType();
+        });
+
+        $('#addForm').ajaxForm({
+            dataType: 'json',
+            beforeSubmit: function (arr, form, options) {
+                if(flag){
+                    $("#numDiv input").focus();
+                    $("#numDiv").addClass("has-error");
+                    $("#numDiv span").show();
+                    Toast.warning("该编码已经存在")
+                    return false;
+                }else{
+                    $("#numDiv").removeClass("has-error")
+                }
+                form.find("button:submit").button("loading");
+            },
+            success: function (data, statusText, xhr, form) {
+                if (data.code == 0) {
+                    Toast.success(data.msg);
+                    form.resetForm();
+                } else {
+                    Toast.error(data.msg);
+                }
+                form.find("button:submit").button("reset");
+            }
+        });
+    });
+</script>
+<%}%>
+
+
